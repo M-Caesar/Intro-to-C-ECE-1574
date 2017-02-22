@@ -1,0 +1,60 @@
+Widget: Wheels
+Description:  Round things that go around and around.
+Part #: Part-1
+Cost: $3.58
+Quantity: 12
+Widget: Springs
+Description:  Bouncy things that go "sproing"
+Part #: Part-2
+Cost: $3.34
+Quantity: 0
+Widget: Sprockets
+Description:  Round things that make you dance.
+Part #: Part-3
+Cost: $8.36
+Quantity: 27
+Widget: Hinges
+Description:  Swingy things that squeak.
+Part #: Part-4
+Cost: $6.98
+Quantity: 26
+Widget: Gears
+Description:  Round things that make things go.
+Part #: Part-5
+Cost: $3.22
+Quantity: 20
+Widget: Screws
+Description:  An inclined plane wrapped helically around a shaft.
+Part #: Part-6
+Cost: $1.4
+Quantity: 22
+Widget: Nuts
+Description:  What squirrels like.
+Part #: Part-7
+Cost: $8.06
+Quantity: 24
+Widget: Bolts
+Description:  What happens when you run really fast.
+Part #: Part-8
+Cost: $0.83
+Quantity: 23
+Widget: Rope
+Description:  An upgrade from twine.
+Part #: Part-9
+Cost: $5.52
+Quantity: 23
+Widget: Nails
+Description:  Sharp pointy things that hold wood.
+Part #: Part-10
+Cost: $3.64
+Quantity: 20
+Widget: Washers
+Description:  How you get your cloths clean.
+Part #: Part-11
+Cost: $2.37
+Quantity: 27
+Widget: Spacers
+Description:  What a dentist uses to make your teeth hurt.
+Part #: Part-12
+Cost: $9.25
+Quantity: 29

@@ -1,0 +1,5 @@
+Total Cahracters:       1503
+Digits:         19
+Letters:        853
+Spaces:        359
+Punctuation:        272

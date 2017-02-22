@@ -1,0 +1,4 @@
+Bacon 1 1.50
+Eggs 2 1.68
+Bread 1 3.49
+Peanut Butter 6 4.09

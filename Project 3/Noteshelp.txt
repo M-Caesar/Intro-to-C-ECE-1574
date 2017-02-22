@@ -1,0 +1,19 @@
+Notes 10 29 2014
+
+Project 3
+
+in.ignore will ignore a certain # of characters OR until the given character is found
+
+in.ignore(200, ':' );
+
+
+if name == add
+	while in .fail
+		call add function
+
+if name == list
+	while in.fail
+		call list function
+
+		....repeat
+

@@ -1,0 +1,48 @@
+Advanced Organizer: November 12
+
+In C++, ________classes_______ puts together data and functions.
+
+When we bundle data and functions together, that is called _____encapsulation_________.
+
+_______Abstraction___________ is when we ignore details of something until we are ready to program that unit.
+
+
+Classes vs. Structs
+
+A Class and a Struct are almost the same except for 2 major differences.
+
+1.Classes are __private__ by default
+
+
+2.Classes start with the keyword class.
+
+
+Methods
+
+Functions that are included with in a class are called methods.
+Data that are included with in a class are called fields.
+
+The method that is called when an object of a class is created is called the ____constructor____________.
+
+
+The job of the constructor is to: ___ initialize the private data.
+
+
+Methods that update, or set, the fields to new values are called ________ setters________ or ________ mutators_________.
+
+
+Methods that retrieve, or get, field values are called _____ getters______________ or _______ accessors____________.
+
+
+Access Modifiers
+
+There are two main access modifiers.
+
+_____private________ means only the class can access the field or method.
+
+
+_____public________ means the class and code outside of the class can access the field or method.
+
+
+Generally, methods are always _____public__________ and fields are always ____private____________.
+

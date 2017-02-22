@@ -1,0 +1,1846 @@
+@charset "utf-8";
+/* CSS Document */
+/* #F0F8FF Pastel Blue */
+/* #FFFBEB Pastel Yellow */
+/* #537BB8 Affinity Heading Blue */
+
+/* We zero margins, paddings, and borders on common HTML elements because there 
+   are browser differences in default settings. By zeroing these elements from 
+   the start, we give these HTML elements a common base. */
+html, body, ul, ol, li, h1, h2, h3, h4, h5, h6, fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* The following pads are used to introduce a little white space
+   as needed in the design. */
+   
+.Pad1T{padding-top: 1px;}
+.Pad2T{padding-top:2px;}
+.Pad3T{padding-top:3px;}
+.Pad4T{padding-top:4px;}
+.Pad5T{padding-top:5px;}
+.Pad6T{padding-top:6px;}
+.Pad7T{padding-top:7px;}
+.Pad8T{padding-top:8px;}
+.Pad9T{padding-top:9px;}
+.Pad10T{padding-top:10px;}
+.Pad11T{padding-top:11px;}
+.Pad12T{padding-top:12px;}
+.Pad13T{padding-top:13px;}
+.Pad14T{padding-top:14px;}
+.Pad15T{padding-top:15px;}
+.Pad16T{padding-top:16px;}
+.Pad17T{padding-top:17px;}
+.Pad18T{padding-top:18px;}
+.Pad19T{padding-top:19px;}
+.Pad20T{padding-top:20px;}
+
+body{
+    padding-top: 7px;
+	background:#EEE;
+}
+
+#page_body{
+	background:#EEE;
+}
+
+#container{
+	width: 992px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	background:#EEE;
+}
+
+.generic_heading{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:large;
+	text-weight: bold;
+	color:#003399;
+	margin-top:2px;
+}
+
+.generic_large_heading{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:x-large;
+	text-weight: bold;
+	color:#003399;
+	margin-top:12px;
+}
+
+.generic_centered_heading{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:large;
+	text-align:center;
+	text-weight: bold;
+	color:#003399;
+	margin-top:2px;
+}
+
+.generic_large_centered_heading{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:x-large;
+	text-align:center;
+	text-weight: bold;
+	color:#003399;
+	margin-top:12px;
+}
+
+.generic_field_frame{
+	width: 590px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background: #FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: small;
+	border: 1px solid #000;
+	padding: 10px;
+}
+
+.elastic_field_frame{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background: #FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: small;
+	border: 1px solid #000;
+	padding: 10px;
+}
+
+.syllabus{
+	width: 610px;
+	padding: 5px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	background:#EEE;
+}
+
+.syllabus_heading{
+	font-size: xx-large;
+	color: #003399;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin-top: 5px;
+	padding:7px;
+}
+
+.class{
+	margin-top:0px;
+	margin-bottom:7px;
+}
+
+.class_heading{
+	text-align:right;
+	padding-bottom:10px;
+}
+
+.class_heading .class_title{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	float:left;
+	font-weight: bold;
+	color: #003399;
+}
+
+.class_heading .class_number_and_date{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size:14px;
+	color: #003399;
+}
+
+.event{
+	background-color: #FFF;
+	border: 1px solid #000;
+	margin-bottom:10px;
+	padding:5px;
+}
+
+.event_heading{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #003399;
+	clear:both;
+}
+
+.event .text,
+.exam .item .text{
+	margin-top:7px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+.multimedia .text{
+	float: left;
+}
+
+.multimedia .icon{
+	text-align: right;
+}
+
+.event_appendix{
+	margin-top: 10px;
+}
+
+.appendix_entry{
+	clear:left;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: dashed;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #000;
+	border-right-color: #000;
+	border-bottom-color: #000;
+	border-left-color: #000;
+}
+
+.appendix_entry .appendix_icon{
+	padding:2px;
+	float:left;
+	margin-right:5px;
+}
+
+.appendix_entry .appendix_text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+	padding-top:5px;
+	padding-bottom: 2px;
+}
+
+.appendix_entry .appendix_entry_with_button  .appendix_icon{
+	padding:2px;
+	float:left;
+	margin-right:5px;
+}
+
+.appendix_entry .appendix_entry_with_button .appendix_text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+	padding-top:5px;
+	padding-bottom: 2px;
+	float:left;
+	width: 540px;
+}
+
+.appendix_entry .appendix_entry_with_button .appendix_button{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+	padding-top:5px;
+	padding-bottom: 2px;
+}
+
+.event .title{
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.exam .item{
+	width: 610px;
+	padding: 5px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:12px;
+	background:#FFF;
+	padding:7px;
+	border: 1px solid #000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+.item_header{
+	background:#FFC;
+	text-align:right;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+.item_header .item_type{
+	float:left
+}
+
+.item_header .item_title{
+}
+
+.cluster{
+	margin-top:0px;
+	margin-bottom:7px;
+}
+
+.cluster_heading{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight: bold;
+	color: #003399;
+	padding-bottom:5px;
+}
+
+.true-false{
+	clear:left;
+	width:115px;
+	margin-top: 7px;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+.true_button{
+	float:left;
+}
+
+.true-false .submit_button{
+	width:50px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:7px;
+}
+
+.multiple_choices{
+	margin-top:7px;
+	margin-left:20px;
+	text-align: left;
+}
+
+.multiple_choices .choice{
+	clear:left;
+}
+
+.multiple_choices .choice .choice_button{
+	float:left;
+}
+
+.multiple_choices .choice .choice_text{ 
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+.multiple_choice_question .submit_button{
+	width:50px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:7px;
+}
+
+.short_answer_question{
+}
+
+.short_answer_blank{
+	width:550px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:7px;
+}
+
+.short_answer_question .submit_button{
+	width:75px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:7px;
+}
+
+.fill-in_question{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+	text-align:left;
+}
+
+.fill-in_question .submit_button{
+	width:75px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:7px;
+	clear:left;
+}
+
+.author_advisory{
+	clear:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+.author_advisory  .author_advisory_heading{
+	font-weight:bold;
+	text-align:center;
+	background:#FFC;
+}
+
+.author_advisory .author_advisory_body{
+}
+
+.author_advisory .author_advisory_body .author_advisory_message{
+	width:550px;
+	padding-right:20px;
+	float:left;
+}
+
+.author_advisory .author_advisory_body .author_advisory_icon img{
+}
+
+#paging_buttons{
+	clear:left;
+	width:210px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+}
+
+#paging_buttons .next_button{
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+#paging_buttons .back_button{
+	padding-right: 25px;
+	padding-left: 25px;
+	float: left;
+}
+
+#inspect_assignments{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+table.inspect_assignments_cluster {border:1px black solid;
+	background-color:#DDD; width:610px; margin-left:auto; margin-right:auto;
+}
+
+td.inspect_assignments_cluster_column_1{border:1px black solid; width:15%; background:#FFF;
+}
+
+td.inspect_assignments_cluster_column_2{border:1px black solid; background: #FFF;
+}
+
+td.inspect_assignments_cluster_exam_item{border:none; background:#FFF;
+}
+
+table.inspect_assignments_cluster_description {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color:#0F0;
+	border-right-color: #0F0;
+	border-bottom-color: #0F0;
+	border-left-color: #0F0;
+}
+
+table.inspect_assignments_records {border:none; 
+}
+
+
+td.inspect_assignments_records_column_1{border:1px black solid; width:15%; background-color: #FFF;
+}
+
+td.inspect_assignments_records_column_2{border:1px black solid; background-color: #FFF;
+}
+
+.control_panel_wrapper{
+	margin-top:10px;
+}
+
+.control_panel_wrapper .working_on_course_message{
+	text-align:center;
+	clear:left;
+}
+
+.control_panel_block{
+	clear:left;
+	width:780px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.control_panel_block .control_panel_group{
+	width: 150px;
+	float:left;
+	text-align:center;
+	border: 1px solid #000;
+	margin: 2px;
+}
+
+.control_panel_group_heading{
+	font-weight:bold;
+	background:#DDEDFF;
+}
+
+.control_panel_feature_messages{
+	padding-top:10px;
+	clear:left;
+	text-align:center;
+}
+
+.control_panel_group_content{
+	background:#FFF;
+	padding-bottom:3px;
+}
+
+.control_panel_group_content ul li{
+	list-style-type: none;	
+}
+
+#trailer{
+		background:#EEE;
+}
+
+.trailer_body{
+	margin-top:10px;
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.trailer_body .trailer_text{
+	border-top:double;
+	border-top-color:#003399;
+	color:#003399;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+
+#trailer .trailer_image_bar{
+	width:600px;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#trailer .trailer_image_bar .trailer_image{
+	float:left;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.syllabus_editor_event{
+	width: 610px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 15px;
+	text-align: left;
+	background: #FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: small;
+	border: 1px solid #000;
+	padding: 10px;
+}
+
+.syllabus_editor_control_block{
+	clear:left;
+	background:#F3FBFE;
+}
+
+.syllabus_editor_controls{
+	float:left;
+}
+
+.syllabus_editor_icon_and_parameters{
+	text-align:right;
+}
+
+.syllabus_editor_heading_block{
+	clear:left;
+}
+
+.syllabus_editor_heading{
+	float:left;
+}
+
+.syllabus_editor_category{
+	text-align:right;
+}
+
+.syllabus_editor_module_label{
+	float:left;
+	padding:5px;
+}
+
+.syllabus_editor_module_text{
+	text-align:left;
+	margin-top:7px;
+}
+
+.syllabus_editor_cluster_label{
+		float:left;
+}
+
+.syllabus_editor_cluster_text{
+	text-align:left;
+}
+
+.syllabus_editor_cluster_multimedia_text{
+	text-align:left;
+}
+
+.syllabus_editor_test_item_label{
+	padding:7px;
+}
+
+.syllabus_editor_test_item_body{
+}
+
+.item_editor_element_block{
+	width: 585px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 15px;
+	text-align: left;
+	background: #FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: small;
+	border: 1px solid #000;
+	padding: 10px;
+}
+
+.item_editor_control_block{
+	clear:left;
+	background:#F3FBFE;
+}
+
+.item_editor_controls{
+	float:left;
+}
+
+.item_editor_icon_and_parameters{
+	text-align:right;
+}
+
+table.element_info{
+	width: 100%;
+}
+
+td.element_info_column_1{
+	width:20%;
+	background:#FEFDE0;
+}
+
+td.element_info_column_2{
+	background:#E9FFE8;
+}
+
+
+
+H1{color:#003399}
+A:link{text-decoration:underline; color:#003399}
+A:visited{text-decoration:underline; color:#003399}
+A:hover{text-decoration:underline; color:red}
+
+#layout {
+	padding: 0;
+	border: none;
+	text-align:center;
+	clear:both;
+	margin-top: 7px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+#layout #content{
+	width:992px;
+	text-align:left;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	border: none;
+	padding: 0;
+} /* the auto margins (in conjunction with a width) center the page */
+
+#layout #content #col1of2 {
+	float:left;
+	text-align:left;
+	margin: 0;
+	padding: 0;
+	border: none;
+} 
+
+#layout #content #col1of2 .portletWrapper .portlet {
+	width: 486px;
+	border-right-width: 4px;
+	border-left-width: 4px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #D6DEE7;
+	border-left-color: #D6DEE7;
+	border-top: none;
+	border-bottom: none;
+}
+
+.indexTop{
+	height:4px;
+	overflow:hidden;
+	background:url(indexTop.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 558px;
+}
+
+.indexBottom{
+	clear:left;
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 558px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.announcementsTop{
+	height:4px;
+	overflow:hidden;
+	background:url(announcementsTop.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 338px;
+}
+
+.announcementsBottom{
+	height:4px;
+	overflow:hidden;
+	background:url(announcementsBottom.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 338px;
+}
+
+.indexBottom383{
+	clear:left;
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom383.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 383px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.indexTop383{
+	height:4px;
+	overflow:hidden;
+	background:url(indexTop383.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 383px;
+}
+
+.indexTop608{
+	height:4px;
+	overflow:hidden;
+	background:url(indexTop608.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 608px;
+}
+
+.indexBottom608{
+	clear:left;
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom608.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 608px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.indexTop494{
+	height:4px;
+	overflow:hidden;
+	background:url(indexTop494.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 494px;
+}
+
+.indexBottom494{
+	clear:left;
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom494.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 494px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.announcementsTop374{
+	height:4px;
+	overflow:hidden;
+	background:url(announcementsTop374.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 374px;
+}
+
+.announcementsBottom374{
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom374.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 374px;
+}
+
+.announcementsTop608{
+	height:4px;
+	overflow:hidden;
+	background:url(indexTop608.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 608px;
+}
+
+.announcementsBottom608{
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom608.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 608px;
+}
+
+.announcementsTop494{
+	height:4px;
+	overflow:hidden;
+	background:url(indexTop494.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 494px;
+}
+
+.announcementsBottom494{
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom494.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 494px;
+}
+
+.announcementsBottom383{
+	clear:left;
+	height:4px;
+	overflow:hidden;
+	background:url(indexBottom383.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 383px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.announcementsTop383{
+	height:4px;
+	overflow:hidden;
+	background:url(indexTop383.gif) 100% 0 no-repeat;
+	background-position: top left;
+	width: 383px;
+}
+
+
+#layout #content #col1of2 .portletWrapper .portlet a:link,
+#layout #content #col1of2 .portletWrapper .portlet a:visited {color:#3A7593; text-decoration:none}
+ 
+#layout #content #col1of2 .portletWrapper .portlet a:hover,
+#layout #content #col1of2 .portletWrapper .portlet a:focus {color:#CC0000; text-decoration:none}
+ 
+#layout #content #col1of2 .portletWrapper .portlet ul { 
+	margin-left:15px;
+	padding-bottom: 3px;
+	margin-bottom: 0px;
+ }
+ 
+#layout #content #col1of2 .portletWrapper .portlet li {
+	list-style:none;
+	border-bottom-style: solid;
+	border-bottom-color: #CACACA;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #FFFFFF;
+	padding-top: 3px;
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+}
+
+#layout #content #col1of2 .portletWrapper .portlet li a:link,
+#layout #content #col1of2 .portletWrapper .portlet li a:visited {
+    color: #1086d9;
+    text-decoration: none;
+}
+
+#layout #content #col1of2 .portletWrapper .portlet li a:hover,
+#layout #content #col1of2 .portletWrapper .portlet li a:focus {
+   color: #CC0000;
+   text-decoration: none;
+}
+
+
+#layout #content #col1of2 .portletWrapper .portlet .CollapsiblePanelContent .NestedMenu li {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size:12px;
+}
+
+#layout #content #col1of2 .portletWrapper .portlet li li {
+	list-style:none;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #D6DEE7;
+	padding-top: 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size:12px;
+}
+
+#layout #content #col2of2 {float:right; text-align:left;} 
+
+#layout #content #col2of2 .portletWrapper .portlet {
+	width: 486px;
+	border-right-width: 4px;
+	border-left-width: 4px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #D6DEDE;
+	border-left-color: #D6DEDE;
+	border-top: none;
+	border-bottom: none;
+}
+
+
+#content .AnnouncementWrapper .insert-edit-delete {
+	display: block;
+	background: #C9DBE7;
+	color: #000000;
+	text-align: right;
+	margin: 0 0 0 0;
+	padding: 0;
+	padding-right: 3px;
+	border-top: none;
+	border-bottom: none;
+	font: bold 86% arial;
+	font-size: small;
+	border-left-width: 1px; 
+	border-left-style: solid; 
+	border-left-color: #ffffff;
+	border-right-width: 1px; 
+	border-right-style: solid; 
+	border-right-color: #ffffff;
+}
+
+#content .AnnouncementWrapper .insert-edit-delete ul{
+    background: #C9DBE7 }
+
+#content .AnnouncementWrapper .insert-edit-delete li {
+	background: #C9DBE7;
+	display: inline;
+	margin: 0 0 0 0;
+	padding: 0;
+}
+
+#content .AnnouncementWrapper .insert-edit-delete a {
+    margin: 0;
+    padding: 0 0 0 15px;
+	text-decoration: none;
+    background: #C9DBE7 url(arrowRIGHT.gif) top left no-repeat;
+}
+#content .AnnouncementWrapper .insert-edit-delete a:link,
+#content .AnnouncementWrapper .insert-edit-delete a:visited {
+    color: #3A7593;
+    text-decoration: none;
+}
+
+#content .AnnouncementWrapper .insert-edit-delete a:hover,
+#content .AnnouncementWrapper .insert-edit-delete a:focus {
+   color: #CC0000;
+   text-decoration: none;
+}
+
+#content .AnnouncementWrapper .AnnouncementText {
+    padding: 5px;
+}
+
+#content .AnnouncementWrapper .AnnouncementDisplayDates {
+	background: #FFFFFF;
+	color: #AAAAAA;
+	text-align: center;
+	margin: 0 0 0 0;
+	padding: 0;
+	font-size: small; /* Prevents Mozilla from showing a horizontal scrollbar */
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #F0F8FF;
+	border-bottom-color: #D6DEE7;
+}
+
+
+.assignmentsHeading {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin: 0px;
+	background: #cc3300 url(../arrowDOWN.gif) no-repeat right bottom;
+	color: #ffffff;
+	border: 0px none #FFFFFF;
+	padding-top: 6px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	vertical-align: middle;
+	border-top-width: 1px; 
+	border-top-style: solid; 
+	border-top-color: #ffffff;
+	border-left-width: 1px; 
+	border-left-style: solid; 
+	border-left-color: #ffffff;
+	border-right-width: 1px; 
+	border-right-style: solid; 
+	border-right-color: #ffffff;
+	border-bottom-width: 1px; 
+	border-bottom-style: solid; 
+	border-bottom-color: #ffffff;
+}
+
+.assignmentsHeading .PortletTabImage {
+	float: left;
+	margin-left: 0px;
+	padding-right: 5px;
+}
+
+.assignmentsHeading .PortletTabLabel {
+	float: left;
+	padding-top: 3px;
+	padding-left: 20px;
+}
+
+#layout #content #col1of2 .portletWrapper .portlet  .PortletTabControl {
+	padding-top: 0px;
+	text-align: right;
+	color: #ffffff;
+}
+
+#layout #content #col1of2 .portletWrapper .portlet .PortletTabControl a:link,
+#layout #content #col1of2 .portletWrapper .portlet .PortletTabControl a:visited{
+    color: #cccccc;
+    text-decoration: none;
+}
+
+#layout #content #col1of2 .portletWrapper .portlet .PortletTabControl a:hover,
+#layout #content #col1of2 .portletWrapper .portlet .PortletTabControl a:focus{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.IndexIcon {
+	float: left;
+	margin-left: 0px;
+	padding-right: 5px;
+}
+
+.IndexLabel {
+	padding-top: 3px;
+	padding-left: 20px;
+}
+
+.reversed a:link,
+.reversed a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.reversed a:hover,
+.reversed a:focus {
+   color: #ffffff;
+   text-decoration: underline;
+}
+
+#layout #trailer {text-align:center};
+
+/* The wrapper contains the entire page, which will be elastic and will
+   extend across the middle 95% of the browser window. The remaining
+   5% creates a little white space at the left and right of the wrapper. */ 
+#wrapper{
+	width: 95%;
+    background-color:#FFFFFF;
+	text-align:left;
+	margin: 5px auto;
+	font-size: small;
+}
+
+/* The banner is the first visible element that appears onscreen */
+#banner {
+	background:#EEE;
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	color: #003399;
+	font-family:Helvetica,Arial,Verdana,sans-serif;
+	font-size: 24px;
+	font-weight:bold;
+	border-width:0; 
+}
+
+/* The banner contains logos that float on the left */
+#banner #logos {
+    float: left;
+}
+
+#banner #logos img {
+	vertical-align:middle;
+	border:none; 
+}
+
+/* The banner contains other elements that will appear next
+   to the logos. We make a container to hold these elements. */
+#banner #container{
+    background:#FFFFFF;
+}
+
+/* The banner is the first visible element that appears onscreen */
+#menu_bar {
+	background:#EEE;
+}
+
+#menu_bar .menu_bar_body{
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#menu_bar .menu_bar_body .menu_bar_image{
+	float:left;
+}
+
+/* The banner contains a vertical bullet menu that right
+   aligns at the top of the screen */
+#topMenu {
+	color: #000000;
+	text-align: right;
+	margin: 0;
+	font: 10px arial;
+	padding-top: 5px;
+	padding-right: 10px;
+}
+
+#topMenu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#topMenu li {
+	display: inline;
+	margin: 0 0 0 4px;
+	padding: 0;
+}
+
+#topMenu li a img {
+    vertical-align:middle;
+	border:none
+}
+
+#topMenu a {
+    margin: 0;
+    padding: 0 0 0 15px;
+    background: #FFFFFF url("Square.gif") top left no-repeat;
+}
+
+#topMenu a:link,
+#topMenu a:visited {
+    color: #003399;
+    text-decoration: none;
+}
+
+#topMenu a:hover,
+#topMenu a:focus {
+   color: #CC0000;
+   text-decoration: underline;
+}
+
+/* We style the search form. */
+#searchForm{
+    font-size:11px;
+	font-weight:normal;
+	color: #003399;
+	text-align:right;
+}
+
+/* Around the search form that appears in the banner container,
+   we create padding so the form has a nice amount of white 
+   above it and on its right. */
+#searchForm form{
+	padding:4px 8px 0px 0px;
+}
+
+#searchForm .searchFormInput {
+	text-align:left;
+    font-size:11px;
+	font-weight:normal;
+	color: #003399;
+}
+
+#searchForm .searchFormSubmit {
+	text-align:center;
+    font-size:11px;
+	font-weight:normal;
+	color: #003399;
+}
+
+/* The sidebar floats on the left of the main
+   content*/
+#sidebarLeft {
+	float: left;
+	width: 225px;
+	background: #FFFFFF;
+	padding: 7px 0 7px 7px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	margin-top: 0px;
+	border-right: 1px solid #C2D5FC;
+}
+
+#sidebarLeft h3{
+    padding: 10px 0px 0px 0px;
+    color:#003399;
+	font-size: 18px;
+}
+
+/* The navigationContainer styles the navigation tree(s) that 
+   appear in the left sidebar. */ 
+
+#navigationContainer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+    width: 220px;
+	color: #003399;
+	background: #FFFFFF;
+    padding: 0;
+	margin-top: 3px;
+}
+
+#navigationContainer .CollapsingMenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navigationContainer .CollapsingMenu li {
+    margin: 0;
+    padding: 0;
+}
+
+#navigationContainer .CollapsingMenu li a {
+	background: #FFFFFF url("Triangle.gif") no-repeat;
+	padding: 0 0 0 12px;
+	font-weight: normal;
+	font-size: 12px;
+	display: block;
+	line-height:1.5;
+}
+	
+#navigationContainer .NestedMenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navigationContainer .NestedMenu li {
+    margin: 0;
+    padding: 0;
+}
+
+#navigationContainer .NestedMenu li a {
+	background: #FFFFFF url("TriangleNested.gif") no-repeat;
+	padding: 0 0 0 30px;
+	font-weight: normal;
+	font-size: 12px;
+	display: block;
+	line-height:1.5;
+}
+
+#navigationContainer a:active,
+#navigationContainer a:link,
+#navigationContainer a:visited {
+   color: #003399;
+   text-decoration: underline;
+}
+
+#navigationContainer a:hover,
+#navigationContainer a:focus {
+   color: #CC0000;
+   text-decoration: underline;
+}
+
+/* Within the collapsing menu can be direct links
+   that are not part of the list and therefore
+   they do not expand or collapse */
+   
+#navigationContainer .CollapsingMenu .NonCollapsingLink{
+	padding: 2px 0px 3px 0px;
+}
+#navigationContainer .CollapsingMenu .NonCollapsingLink a{
+	font: bold small sans-serif;
+	text-decoration:none;
+	padding: 4px 2px 2px 15px;
+	background: #FFF url("Triangle.gif") no-repeat left center;
+	color: #003399;
+}
+#navigationContainer .CollapsingMenu .NonCollapsingLink a:active,
+#navigationContainer .CollapsingMenu .NonCollapsingLink a:link,
+#navigationContainer .CollapsingMenu .NonCollapsingLink a:visited{
+	text-decoration:none;
+	color: #003399;
+}
+
+#navigationContainer .CollapsingMenu .NonCollapsingLink a:hover,
+#navigationContainer .CollapsingMenu .NonCollapsingLink a:focus{
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+/* The page's main content goes into the #content div,
+   whose margin keeps all the content to the right
+   of the left sidebar. */
+#content {
+    /*margin: 0px 5px 0px 235px;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 0px 10px;
+	border: 0;
+	border-right: 0;
+}
+
+#content p {
+    padding-top:0px;
+    padding-bottom:12px;
+}
+
+/* For cases when we want a final paragraph to have no
+   padding at the bottom */
+#content .finalParagraph{
+    padding-bottom:0px;
+}
+
+#content h1.titlePage {
+    color: #003399;
+	font-size: 32px;
+    margin: 0 0 0 0;
+    padding: 0px 0 0 0;
+	font-family: "Trebuchet MS", sans-serif;
+}
+#content h2.titlePage {
+	color: #003399;
+	font-size: 24px;
+	margin-bottom: 0;
+	padding: 0px 0 0 0;
+	font-family: "Trebuchet MS", sans-serif;
+}
+#content h1 {
+    color: #003399;
+	font-size: 28px;
+    margin: 0 0 0 0;
+    padding: 0px 0 0 0;
+	font-family: "Trebuchet MS", sans-serif;
+}
+#content h2 {
+	color: #003399;
+	font-size: 20px;
+	margin-bottom: 0;
+	padding: 0px 0 0 0;
+	font-family: "Trebuchet MS", sans-serif;
+}
+#content h3 {
+    color: #003399;
+    font-size: 16px;
+    font-family: "Trebuchet MS", sans-serif;
+    padding: 0px 0 0 0;
+}
+
+#content a:link,
+#content a:visited {
+    color: #003399;
+    text-decoration: underline;
+}
+
+#content a:hover,
+#content a:focus {
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+#content ul {
+	margin-left: 36px;
+	list-style:square;
+	margin-bottom: 9px;
+}
+
+#content ol {
+	margin-left: 36px;
+	list-style:decimal;
+	margin-bottom: 9px;
+}
+
+/* Create a div of the menu class when you want to make
+   a menu appear in the content div with a triangle bullet
+   shape as in the navigation sidebar */
+#content .menu ul {
+    list-style: none;
+}
+
+#content .menu li {
+	list-style: url("Triangle.gif") outside;
+}
+
+#content .menu li a {
+	line-height:1.5;
+}
+
+#content pre {
+	font-size:14px;
+}
+
+/* Within the content div can be a yellow highlights 
+   box that floats to the right of the HTML element
+   it precedes. */
+ 
+#content .sidebar {
+	float: right;
+	clear:right;
+	width: 260px;
+	margin: 10px 0px 10px 10px;
+    padding: 5px 5px 5px 10px;
+	background:  #FFFFEE;
+    border: 1px solid #C2D5FC;
+	font-family: Arial, Helvetica, sans-serif;
+    color: #003399;
+	font-size:13px;
+}
+
+#content .sidebar p {
+    padding: 5px 0 5px 0;
+}
+
+#content .sidebar h3 {
+    color: #003399;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+    padding: 0;
+}
+
+
+
+#content .sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#content .sidebar li {
+    margin: 0;
+    padding: 0;
+}
+
+#content .sidebar .blueSquareBullet {
+	background: #FFFFEE url("SquareBlue.gif") no-repeat;
+	padding: 0 0 0 15px;
+	font-weight: normal;
+	font-size: 11px;
+	width: 220px;
+	display: block;
+}
+
+#content .sidebar li a {
+	background: #FFFFEE url("Triangle.gif") no-repeat;
+	padding: 0 0 0 12px;
+	font-weight: normal;
+	font-size: 85%;
+	width: 220px;
+	display: block;
+	line-height:1.5;
+}
+
+#content .sidebar a:active,
+#content .sidebar a:link,
+#content .sidebar a:visited {
+   color: #003399;
+   text-decoration: underline;
+}
+
+#content .sidebar a:hover,
+#content .sidebar a:focus {
+   color: #CC0000;
+   text-decoration: underline;
+}
+
+
+/* The page concludes with a footer. */
+
+#footer{
+    margin-top: 10px;
+	border-top: 5px solid #C2D5FC;
+	color: #003399;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:smaller;
+}
+
+#footer p{
+	margin: 0 0 12px 0px;
+	padding: 0;
+	list-style: none;
+	border-top: 1px solid #C2D5FC;
+	margin-top: 1px;
+}
+
+#footer a:link,
+#footer a:visited {
+    color: #003399;
+    text-decoration: none;
+}
+
+#footer a:hover,
+#footer a:focus {
+   color: #CC0000;
+   text-decoration: underline;
+}
+
+/* Throughout, images normally have no border */
+img{
+     border:none;
+}
+
+/* True to their name, leftImage and rightImage will cause an
+   image to float with its top aligned to the nearest element 
+   following the image in the HTML. The border around the image 
+   box has a solid line. */
+.leftImage{
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	margin-left:0px;
+    margin-right: 10px;
+    border: 1px solid #000000;
+}
+
+.rightImage{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+	margin-right: 0px;
+    float: right;
+    border: 1px solid #000000;
+}
+
+.leftImageBorderless{
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	margin-left:0px;
+    margin-right: 10px;
+}
+
+.rightImageBorderless{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+	margin-right: 0px;
+    float: right;
+}
+
+/* The tabContainer styles the look of the tabs in the
+   Spry tabbed panels. The rest of the tabbed panel
+   skin comes from SpryTabbedPanels.css. */
+.tabContainer{
+	background:none;
+	padding: 0px 0px 0px 0px;
+	text-align:left;
+	font-size:small;
+}
+
+/* We create classes that can be used to clear left or clear
+   both left and right floats. */
+.clearFloat { /* Dreamweaver comments that this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+.clearLeftFloat { 
+	clear:left;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+/* rightFloat provides a way to float something right that
+   does not otherwise float right in the design */
+.rightFloat{
+     float:right;
+}
+
+.skiplink{display:none}
+
+SPAN.SystemHeading1{font-size:large; font-family:Arial Black; color: #537BB8;}
+SPAN.SystemHeading3{font-size:medium; font-family:Arial; color: #537BB8;}
+
+Table.SystemDialog{border-color:silver; border-width:2; border-style:groove;
+	background-color:#F0F8FF; width:100%}
+TD.SystemDialogLeft{text-align:left;}
+TD.SystemDialogCenter{text-align:center;}
+TD.SystemDialogRight{text-align:right;}
+
+Table.SystemBoundingTable {border: 0; background-color:white; width:610; 
+	font-family:Arial; font-weight:bold}
+Table.SystemBoundingTableNoLimit {border: 0; background-color:white; width:100%;
+	font-family:Arial; font-weight:bold}
+TD.SystemBoundingTable{padding:0;}
+TD.SystemBoundingTableLeft{padding:0; text-align:left}
+TD.SystemBoundingTableCenter{padding: 0; text-align:center}
+H1.SystemBoundingTable {font-family: verdana, arial, helvetica, sans-serif; 
+                          font-size: 18pt; color:#537BB8}
+
+
+SPAN.AffinityHeading1{font-size:large; font-family:Arial Black; color: #537BB8;}
+SPAN.AffinityHeading3{font-size:medium; font-family:Arial; color: #537BB8;}
+
+Table.AffinityDialog{border-color:silver; border-width:2; border-style:groove;
+	background-color:#F0F8FF; width:100%}
+TD.AffinityDialogLeft{text-align:left;}
+TD.AffinityDialogCenter{text-align:center;}
+TD.AffinityDialogRight{text-align:right;}
+
+.AffinityColor{color: #537BB8;}
+.AffinityReverseColor{background-color:#537BB8; color: White; font-family:Arial; font-weight:bold;}
+
+A.LibraryHoldingTitle:link {text-decoration: underline; color:white}
+A.LibraryHoldingTitle:visited {text-decoration: underline; color:white}
+A.LibraryHoldingTitle:hover {text-decoration: underline; color: red}
+
+A.EzineIssueTitle:link {text-decoration: underline; color:white}
+A.EzineIssueTitle:visited {text-decoration: underline; color:white}
+A.EzineIssueTitle:hover {text-decoration: underline; color: red}
+
+Table.AffinityBoundingTable {border: 0; background-color:white; width:600; 
+	font-family:Arial; font-weight:bold}
+Table.AffinityBoundingTableNoLimit {border: 0; background-color:white;
+	font-family:Arial; font-weight:bold}
+TD.AffinityBoundingTable{padding:10;}
+TD.AffinityBoundingTableLeft{padding:10;}
+TD.AffinityBoundingTableCenter{padding: 10; text-align:center}
+H1.AffinityBoundingTable {font-family: verdana, arial, helvetica, sans-serif; 
+                          font-size: 18pt; color:#537BB8}
+H2.AffinityBoundingTable {color: gray}
+SPAN.AffinityBoundingTablePrefix0{color: gray}
+SPAN.AffinityBoundingTableHeading0{font-family:Arial; color:#537BB8; font-size:larger}
+SPAN.AffinityBoundingTablePrefix1{color: gray}
+SPAN.AffinityBoundingTableHeading1{font-family:Arial; color:#537BB8; font-size:larger}
+SPAN.AffinityBoundingTablePrefix2{color: gray}
+SPAN.AffinityBoundingTableHeading2{font-family:Arial; color:#537BB8; font-size:larger}
+
+Table.AffinityOrderedListFrame{border: 0; background-color:white;  
+	font-family:Arial; font-weight:bold;}
+Table.AffinityOrderedListFrameTransparent{border: 0; background-color:Transparent;  
+	font-family:Arial; font-weight:bold;}
+TD.AffinityOrderedListFrame{font-family:Arial; font-weight:bold;text-align:left;}
+A.AffinityOrderedList:link {text-decoration: underline; color: black}
+A.AffinityOrderedList:visited {text-decoration: underline; color: black}
+A.AffinityOrderedList:hover {text-decoration: underline; color: red}
+
+Table.AffinityUnorderedListFrame{border-style:solid; border-color:#537BB8; border-width:1; background-color:white;  
+	font-family:Arial; font-weight:bold;}
+TD.AffinityUnorderedListFrame{text-align:left;}
+A.AffinityUnorderedList:link {text-decoration: underline; color: black}
+A.AffinityUnorderedList:visited {text-decoration: underline; color: black}
+A.AffinityUnorderedList:hover {text-decoration: underline; color: red}
+
+Table.AffinityListerTableFull{border-style:solid; border-color:#537BB8; border-width:1; 
+	background-color:White; width:100%; font-family:Arial; font-weight:bold;}
+Table.AffinityListerTableFullNoBorder{border-style:none;
+	background-color:White; width:100%; font-family:Arial; font-weight:bold;}
+Table.AffinityListerTable{border-style:solid; border-color:#537BB8; border-width:1; 
+	background-color:White; font-family:Arial; font-weight:bold;}
+TD.AffinityListerTableCenter{text-align:center}
+TD.AffinityListerTableCenterStriped{text-align:center; background-color:#F0F8FF}
+TD.AffinityInnerListerLeft{text-align:left; vertical-align:super}
+TD.AffinityListerTableLeftStriped{text-align:left; vertical-align:super; background:#FFFBEB}
+TD.AffinityListerTableLeftDottedLeft{text-align:left; border-left:dashed 1 gray; padding-left:4; vertical-align:super}
+TD.AffinityListerTableLeftStripedDottedLeft{text-align:left; border-left:dashed 1 gray; padding-left:4; vertical-align:super; background:#FFFBEB}
+TD.AffinityListerTableLeftDotted{text-align:left; border-top:dashed 1 gray; vertical-align:super}
+TD.AffinityListerTableRightDotted{text-align:left; border-top:dashed 1 gray; vertical-align:super}
+TD.AffinityListerTableLeftDottedStriped{text-align:left; border-top:dashed 1 gray;
+	background-color:#FFFBEB; vertical-align:super}
+TD.AffinityInnerListerCenter{text-align:center; vertical-align:super}
+TD.AffinityInnerListerRight{text-align:right; vertical-align:super}
+TD.AffinityListerTableRightStriped{text-align:right; vertical-align:super; background:#FFFBEB}
+TD.AffinityInnerListerLeftBorder{text-align:left; border-top:dashed 1 gray; vertical-align:super}
+TD.AffinityInnerListerLeftBorderGray{text-align:left; vertical-align:super; color:Gray; font-weight:normal}
+TD.AffinityInnerListerLeftBorderGrayDashed{padding:0;text-align:left; border-top:dashed 1 gray; vertical-align:super;
+	color:Gray; font-weight:normal;}
+TD.AffinityInnerListerLeftBorderGrayDashedStriped{padding:0;text-align:left;background-color:#FFFBEB; 
+	border-top:dashed 1 gray; vertical-align:super; color:Gray; font-weight:normal}
+A.AffinityListerTable:link {text-decoration: underline; color: black}
+A.AffinityListerTable:visited {text-decoration: underline; color: black}
+A.AffinityListerTable:hover {text-decoration: underline; color: red}
+
+Table.IndentedItemTable{border: 0; font-family:Arial; font-weight:bold; width:100%}
+TD.IndentedItemTableLeft{text-align:left;}
+TD.IndentedItemTableLeftStriped{text-align:left; background-color:#FFFBEB}
+TD.IndentedItemTableRight{text-align:right;}
+SPAN.MessageNumber{font-size:smaller; font-family:Courier New; color: #537BB8}
+SPAN.MessageAuthor{font-size:smaller; font-family:Arial; color: #537BB8}
+TD.IndentedItemTableUndotted{text-align:left; vertical-align:baseline}
+A.IndentedItemTable:link {text-decoration: underline; font-size:small; font-family:Arial; color: black}
+A.IndentedItemTable:visited {text-decoration: underline; font-size:small; font-family:Arial; color: black}
+A.IndentedItemTable:hover {text-decoration: underline; font-size:small; font-family:Arial; color: red}
+
+Table.SortByDateEntry{margin:0 0 0 0; border: 0; font-family:Arial; font-weight:bold; width:100%}
+TD.SortByDateLine1{text-align:right; color:Gray; font-weight:normal; vertical-align:super}
+TD.SortByDateLine2{text-align:left; color:Black; font-weight:bold; vertical-align:super}
+A.SortByDateEntry:link {text-decoration: underline; color: black}
+A.SortByDateEntry:visited {text-decoration: underline; color: black}
+A.SortByDateEntry:hover {text-decoration: underline; color: red}
+
+Table.AffinityDialog{border-color:silver; border-width:2; border-style:groove;
+	background-color:#F0F8FF; width:100%}
+TD.AffinityDialogLeft{text-align:left;}
+TD.AffinityDialogCenter{text-align:center;}
+TD.AffinityDialogRight{text-align:right;}
+
+Table.AffinityDialogInnerTable{margin:0 0 0 0; border: 0; font-family:Arial; font-weight:bold;}
+TD.AffinityDialogInnerTableCenter{text-align:center;}
+TD.AffinityDialogInnerTableLeft{text-align:left;}
+TD.AffinityDialogInnerTableRight{text-align:right;}
+TD.AffinityDialogInnerTableColumnTitle{color:green;}
+TD.AffinityDialogInnerTableColumnData{color:blue;}
+TD.AffinityDialogInnerTableTitleCenter{text-align:center; color:#537BB8}
+A.AffinityDialogInnerTable:link {text-decoration: underline; color: maroon}
+A.AffinityDialogInnerTable:visited {text-decoration: underline; color: black}
+A.AffinityDialogInnerTable:hover {text-decoration: underline; color: red}
+
+Table.AffinityDialogInnerTableCollapsed{margin:0 0 0 0; border-collapse:collapse; border: 0; font-family:Arial; font-weight:bold;}
+TD.AffinityDialogInnerTableCollapsedCenter{text-align:center;}
+TD.AffinityDialogInnerTableCollapsedColumnTitle{color:black; vertical-align:bottom}
+TD.AffinityDialogInnerTableCollapsedColumnData{color:#537BB8;}
+TD.AffinityDialogInnerTableCollapsedColumnDataCenter{text-align:center;color:#537BB8;}
+TD.AffinityDialogInnerTableCollapsedColumnDataStriped{color:#537BB8;background:#FFFBEB}
+TD.AffinityDialogInnerTableCollapsedColumnDataCenterStriped{text-align:center;color:#537BB8;background:#FFFBEB}
+
+Table.AffinityDialogInnerSubTable{margin:0 0 0 0; border: 0; font-family:Arial; font-weight:bold;}
+TD.AffinityDialogInnerSubTableLeft{text-align:left}
+TD.AffinityDialogInnerSubTableCenter{text-align:center}
+
+Table.ThreadBoundingTable{border:0; width:100%; background-color: #537BB8}
+
+Table.DiscussionMessageUserOptions{border: 1; background-color: #F0F8FF;
+	font-family:Arial; font-size:smaller; font-weight:normal; color:gray}
+TD.DiscussionMessageUserOptionsLeft{text-align:left}
+TD.DiscussionMessageUserOptionsCenter{text-align:center}
+A.DiscussionMessageUserOptions:link {text-decoration: underline; color: black}
+A.DiscussionMessageUserOptions:visited {text-decoration: underline; color: black}
+A.DiscussionMessageUserOptions:hover {text-decoration: underline; color: red}
+
+TD.ThreadedMessageSpanningTableSpan{background:#537BB8}
+
+Table.ThreadedMessageBoundingTable{border-style:solid;  border-width: 2; 
+	border-color: #537BB8; width: 100%; background-color:White;
+	font-family:Arial; font-weight:bold;}
+TD.ThreadedMessageBoundingTable{text-align:left; padding: 0;}
+TD.ThreadedMessageBoundingTablePadded{text-align:left; padding: 10;}
+TD.ThreadedMessageBoundingTableCenter{text-align:center; padding: 0;}
+TD.ThreadedMessageBoundingTableSpan{padding:0; background:#F0F8FF}
+
+Table.ThreadedMessageSpanningTable{border-style:solid;  border-width: 2; 
+	border-color: #537BB8; width: 100%; background-color:White;
+	font-family:Arial; font-weight:bold;}
+
+Table.ThreadedMessageNestingTable{width: 100%; padding: 0; border-width: 0;}
+TD.ThreadedMessageNestingTableNumber{font-family:Courier New; vertical-align:top}
+TD.ThreadedMessageNestingTable1Color{background-color: Silver;}
+TD.ThreadedMessageNestingTableLine{}
+TD.ThreadedMessageNestingTableBlank{}
+
+Table.ThreadedMessageTitleTable{border: 0; width:100%; background-color:#537BB8;
+	 font-size:medium; font-family:Arial; font-weight:normal; color:White}
+TD.ThreadedMessageTitleTableCol1{text-align:left; padding: 0;}
+TD.ThreadedMessageTitleTableCol2{text-align:right; padding: 0;}
+
+Table.ThreadedMessageHeaderTable{border: 0; width:100%; background-color:#F0F8FF;
+	font-size:smaller; font-family:Arial; font-weight:normal; color:Black}
+TD.ThreadedMessageHeaderTableCol1{text-align:left; padding: 0;}
+TD.ThreadedMessageHeaderTableCol2{text-align:right; padding: 0;}
+
+SPAN.ThreadedMessageReplies{font-size:smaller; color:#537BB8}
+SPAN.ThreadedMessageNew{font-size:smaller; color:Red}
+
+Table.AffinityPrivilegeLinksTable{border: 0; width:100%; font-family:Arial; font-weight:bold;}
+TD.AffinityPrivilegeLinksTableLeft{text-align:left;}
+TD.AffinityPrivilegeLinksTableRight{text-align:right;}
+A.AffinityPrivilegeLinksTable:link {text-decoration: underline; color: black}
+A.AffinityPrivilegeLinksTable:visited {text-decoration: underline; color: black}
+A.AffinityPrivilegeLinksTable:hover {text-decoration: underline; color: red}
+
+table.Statistics{
+	margin-left:auto; 
+	margin-right:auto;
+	border-collapse:collapse;}
+
+.Statistics_column_1_heading,
+.Statistics_column_2_heading,
+.Statistics_column_3_heading,
+.Statistics_column_4_heading,
+.Statistics_column_5_heading,
+.Statistics_column_6_heading
+{
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	padding:4px;
+	text-align: center;
+	border-color:#A7A7A7;
+	border-width:1px;
+	border-style:solid;
+}
+
+
+.Statistics_column_1_odd,
+.Statistics_column_2_odd,
+.Statistics_column_3_odd,
+.Statistics_column_4_odd,
+.Statistics_column_5_odd,
+.Statistics_column_6_odd
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	background-color: #F7F7F7;
+	text-align: center;
+	border-color:#A7A7A7;
+	border-width:1px;
+	border-style:solid;
+}
+
+.Statistics_column_1_even,
+.Statistics_column_2_even,
+.Statistics_column_3_even,
+.Statistics_column_4_even,
+.Statistics_column_5_even,
+.Statistics_column_6_even
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	background-color: #FFFFFF;
+	text-align: center;
+	border-color:#A7A7A7;
+	border-width:1px;
+	border-style:solid;
+}

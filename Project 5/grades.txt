@@ -1,0 +1,6 @@
+Name:David	McPherson
+Attendance:9
+Midterm:89
+Final:88
+HWs:100	90	80
+Projects: 100	90	80

@@ -1,0 +1,41 @@
+Notes 9 29 2014
+
+Default Passing MEchanism:
+Pass-By-Value or Pass-By-Copy
+
+****In main, when we ask for a number, the oddOrEven.cpp will get a 'copy' of the real value. 
+
+Alternative Passing Mechanism:
+Pass-By-Reference or Pass-By-Address (always assume it will give return information. As in, it is an output parameter)
+
+****This allows the function to modify a parameter. 
+1. Does the function modify the paramter?
+2. Does the calling need to know about the change? (if you answer yes to both of thoe, you need to use pass by reference, if either 													is no, then get pass by value.) 
+
+The address-Of Operator. This will allow the above to happen. 
+Example:
+
+int x;
+cout << &x;
+
+This will tell me the address of x
+
+Example:
+
+Candy vendingMachine( int &money );
+
+----------
+Scope and Lifetime
+
+Scope is where a variable is visible in the code
+
+Global Variables are VERY bad
+A Global Variable  is one that is declared outside of a scope
+Example:
+int number; // this is blobal
+bool oddOrEven (  );
+
+Don't do this. 
+
+
+The return statement in oddOrEven.cpp can only return one thing as you can't assign return to two things without overwritting the first one. 

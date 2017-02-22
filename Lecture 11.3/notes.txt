@@ -1,0 +1,32 @@
+A pointer is a variable with an address.
+
+
+An address is a location in memory. 
+
+A variable can change
+
+A reference is a constant that holds an address.  A constant can not change. 
+
+& is the address-of operator. 
+
+A pointer can be changed however. 
+
+
+A pointer allows for the dynamic allocation of memory.
+
+-or-
+
+reqeusts memory while the program is executing. 
+
+
+How to declare a pointer?
+dataType   *name;
+
+You just add a star to it. 
+
+int *x;// this is a pointer to an int -or- x is a pointer to an int. 
+
+int y;
+
+x = &y;
+

@@ -1,0 +1,1 @@
+Constructors have no return types and have the same name as the main class

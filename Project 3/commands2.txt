@@ -1,0 +1,13 @@
+Part-1
+buy
+Part #: Part-1 10
+list Part-1
+add
+Widget: LightBlubs
+Description: Makes things easier to see
+Part #: Part-100
+Cost: $1.56
+Quantity: 100
+list Part-100
+list
+save inventory2.txt

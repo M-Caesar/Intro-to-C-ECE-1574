@@ -1,0 +1,47 @@
+Visual Studio
+
+
+Win32 Command Line
+
+Don't run it in its own directory
+
+Then click next and application settings. MAKE SURE to click empty project. 
+
+DON'T GO TO File New
+
+
+Go to Project Directory and Add New Item. This will add stuff to the project. Or right click on Source File and then Add-->New Item
+
+Any input file for any new projects for VS have to go into Documents/VisualStudio/Projects/(projectname) 
+
+
+
+-----
+Array
+
+An array is an aggreagate "data structure"
+An arra is an continuous block of memory.
+
+Declaring an Array
+int myArray[10]; // this gives space for 10 ints
+dataType arrayName[ArraySize];
+
+Arrays are numbered starting with 0
+and go to 1 less than their size
+
+Two limitations to Arrays
+1. They are fixed sized.
+2. They can only store data of the type they are created with. Only INTS or what you declare it as. Also must be constant. 
+
+3 Things you need to remember with Arrays. 
+1. The name of the array
+2. How big is the array.
+3. How much is in the array. 
+
+4 Ways to structure or organize a program (midterm)
+*I think
+1:Iteration
+2:Selection
+3:Function
+4:Sequence
+

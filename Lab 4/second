@@ -1,0 +1,7 @@
+#include "calculate.h"
+using namespace std;
+void calculate( istream& in, ostream& out )
+
+{
+
+}

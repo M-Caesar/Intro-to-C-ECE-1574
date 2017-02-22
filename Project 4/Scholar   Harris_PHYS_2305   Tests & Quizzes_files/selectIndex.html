@@ -1,0 +1,4103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0094)https://scholar.vt.edu/portal/tool/d705c19d-ec7b-40d6-a41c-3df92ed0db81/jsf/select/selectIndex -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="tool_base.css" type="text/css" rel="stylesheet" media="all">
+<link href="tool.css" type="text/css" rel="stylesheet" media="all">
+<script type="text/javascript" language="JavaScript" src="headscripts.js"></script>
+<script type="text/javascript" language="JavaScript">var sakai = sakai || {}; sakai.editor = sakai.editor || {};  sakai.locale = sakai.locale || {};
+sakai.locale.userCountry = 'US';
+sakai.locale.userLanguage = 'en';
+sakai.locale.userLocale = 'en_US';
+sakai.editor.collectionId = '/group/0bc857cc-a254-4fa8-a653-f5190812afb5/';
+sakai.editor.enableResourceSearch = false;</script>
+<script type="text/javascript" language="JavaScript">var CKEDITOR_BASEPATH='/library/editor/ckeditor/';
+</script>
+<script type="text/javascript" language="JavaScript" src="ckeditor.js"></script>
+<script type="text/javascript" language="JavaScript" src="ckeditor.launch.js"></script>
+<link href="tool_sam.css" type="text/css" rel="stylesheet" media="all">
+
+	  <script type="text/javascript" src="saveForm.js"></script>	  	  
+      <title> Ch. 14 Sec 5,7,8 Ch. 17 Sec 1,4,5,6 
+      </title>
+      <style type="text/css">
+        .TableColumn {
+          text-align: center
+        }
+       .TableClass {
+         border-style: dotted;
+         border-width: 0.5px;
+         border-color: light grey;
+       }
+      </style>
+      </head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
+	
+      <body onload="setMainFrameHeight(&#39;Maind705c19dxec7bx40d6xa41cx3df92ed0db81&#39;);setFocus(focus_path);; setLocation(); checkRadio(); SaveFormContentAsync(&#39;deliverAssessment.faces&#39;, &#39;takeAssessmentForm&#39;, &#39;takeAssessmentForm:save&#39;, &#39;takeAssessmentForm:lastSubmittedDate1&#39;, &#39;takeAssessmentForm:lastSubmittedDate2&#39;,  900000, true); setTimeout(&#39;setLocation2()&#39;,2)" marginwidth="0" marginheight="0">
+ 
+      <a name="top"></a>
+      
+      <!--
+
+-->
+
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="jquery.blockUI-2.31.js"></script>
+<link type="text/css" href="jquery-ui-1.7.2.custom.css" rel="stylesheet" media="all">
+
+<script type="text/javascript">
+     $(document).ready(function(){
+	
+		$('input[type=submit]').click(function() { 
+			$.blockUI({ message: '',
+						overlayCSS: { 
+							backgroundColor: '#ff0',
+							opacity: 0}
+			}); 
+		}); 
+			
+		$('#timer-warning').dialog({
+			autoOpen: false,
+			width: 400,
+			modal: true,
+			resizable: false,
+			draggable: false
+		});
+		
+		$('#timer-expired-warning').dialog({
+			autoOpen: false,
+			width: 400,
+			modal: true,
+			resizable: false,
+			draggable: false,
+			closeOnEscape: false,
+			open: function (event,ui) { 
+				$(".ui-dialog-titlebar", $(this).parent()).hide(); 
+				$(this).css("background", "#EEEEEE");
+			}
+		});
+		
+	});
+
+	function showTimerWarning() {
+		$('#timer-warning').dialog('open');
+		return false;
+	}
+	
+	function showTimerExpiredWarning(submitfunction) {
+		$('#timer-expired-warning').dialog('open');
+		setTimeout(submitfunction,5000);
+		return false;
+	}
+</script>
+
+      
+      <script type="text/javascript">
+		
+		function whichradio(obj){ 
+
+          var myId = String(obj.id);
+          //such as : takeAssessmentForm:_id48:0:_id105:1:deliverMatrixChoicesSurvey:matrixSurveyRadioTable:0:_id1198_0:myRadioId1
+          //find the table id for mutiple matrix questions tables on the same display page 
+          //take care of two different question, one set as forceRanking, another is not
+          var myIdParts = myId.split(":");
+
+          var node_list = document.getElementsByTagName('input');
+          for (var i=0; i<node_list.length; i++) {
+            var node = node_list[i];		
+            if (node.getAttribute('type') == 'hidden' && node.id.endsWith('forceRanking')){
+              var nodeIdParts = node.id.split(":");
+              if(nodeIdParts[4]==myIdParts[4] && node.value == 'true'){
+                //find the radio button table(s)
+                var tables = document.getElementsByTagName('table');
+
+                for(var i=0; i<tables.length; i++){
+                  var mytable = tables[i];
+                  var mytableParts = mytable.id.split(":");
+                  if(mytable.id.endsWith('matrixSurveyRadioTable') && mytableParts[4] == myIdParts[4]){
+                    //found the right table
+                    break;
+                  }
+                }
+
+                //index will be the begining of 'matrixSurveyRadioTable'
+                var index = myId.indexOf("matrixSurveyRadioTable");
+                var strBefore = myId.substring(0,index+'matrixSurveyRadioTable'.length);
+                //remove table no 
+                var strAfter = myId.substring(index+'matrixSurveyRadioTable'.length+2);
+                //find rows of mytable	
+                var iRow = mytable.getElementsByTagName('tr');
+                //one header row before the row containing the radio button
+                for (var i=0; i<iRow.length-1;i++){
+                    //alert(i);
+                  //construct radio button id in the same column
+                  var currentRadioButtonId= strBefore+":"+i+strAfter;
+                  //alert(currentRadioButtonId);
+                  var button=document.getElementById(currentRadioButtonId);
+                  var buttonIdStr = String(button.id);
+                  if(button.getAttribute('type') == 'radio' && button.checked == true && buttonIdStr != myId){
+                    obj.checked = false;
+                    alert("You are only allowed one selection per column, please try again.");
+                    return;
+                  }
+                }
+                return;
+              }
+            }
+          }
+		}
+
+
+      </script>
+      
+      
+ 	  
+ 
+ <div class="portletBody" style="background:transparent;">
+
+<!-- content... -->
+<form id="takeAssessmentForm" method="post" action="https://scholar.vt.edu/portal/tool/d705c19d-ec7b-40d6-a41c-3df92ed0db81/jsf/delivery/deliverAssessment" enctype="multipart/form-data" onsubmit="saveTime()">
+
+
+<!-- JAVASCRIPT -->
+<!-- Samigo embedded delivery.js starts here -->
+<script type="text/javascript">
+
+function printForm(){
+  alert("print 0");
+  for(i=0; i<document.forms[0].elements.length; i++)
+  {
+    alert("The field name is: " + document.forms[0].elements[i].name); 
+  }
+}
+
+function printLink(){
+  for (var i=0; i < document.links.length; i++){
+    alert(document.links[i].id);
+  }
+}
+
+var beginAssessment1Disabled = 'false';
+function disableBeginAssessment1(){
+  if (beginAssessment1Disabled === 'false'){
+    beginAssessment1Disabled = 'true';
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment2'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment3'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment3'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel1'])
+      document.forms[0].elements['takeAssessmentForm:cancel1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel2'])
+      document.forms[0].elements['takeAssessmentForm:cancel2'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment1'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment1'].disabled=true;
+  }
+}
+
+
+var beginAssessment2Disabled = 'false';
+function disableBeginAssessment2(){
+  if (beginAssessment2Disabled === 'false'){
+    beginAssessment2Disabled = 'true';
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment1'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment3'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment3'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel1'])
+      document.forms[0].elements['takeAssessmentForm:cancel1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel2'])
+      document.forms[0].elements['takeAssessmentForm:cancel2'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment2'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment2'].disabled=true;
+  }
+}
+
+var beginAssessment3Disabled = 'false';
+function disableBeginAssessment3(){
+  if (beginAssessment3Disabled === 'false'){
+    beginAssessment3Disabled = 'true';
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment1'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment2'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel1'])
+      document.forms[0].elements['takeAssessmentForm:cancel1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel2'])
+      document.forms[0].elements['takeAssessmentForm:cancel2'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment3'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment3'].disabled=true;
+  }
+}
+
+var cancel1Disabled = 'false';
+function disableCancel1(){
+  if (cancel1Disabled === 'false'){
+    cancel1Disabled = 'true';
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment1'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment2'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment3'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment3'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel2'])
+      document.forms[0].elements['takeAssessmentForm:cancel2'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['takeAssessmentForm:cancel1'])
+      document.forms[0].elements['takeAssessmentForm:cancel1'].disabled=true;
+  }
+}
+
+var cancel2Disabled = 'false';
+function disableCancel2(){
+  if (cancel2Disabled === 'false'){
+    cancel2Disabled = 'true';
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment1'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment2'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:beginAssessment3'])
+      document.forms[0].elements['takeAssessmentForm:beginAssessment3'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:cancel1'])
+      document.forms[0].elements['takeAssessmentForm:cancel1'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['takeAssessmentForm:cancel2'])
+      document.forms[0].elements['takeAssessmentForm:cancel2'].disabled=true;
+  }
+}
+
+var submitForGradeTOC1Disabled = 'false';
+function disableSubmitForGradeTOC1(){
+  if (submitForGradeTOC1Disabled === 'false'){
+    submitForGradeTOC1Disabled = 'true';
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC1'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC1'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC2'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC2'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'].disabled=true;
+  }
+}
+
+var submitForGradeTOC2Disabled = 'false';
+function disableSubmitForGradeTOC2(){
+  if (submitForGradeTOC2Disabled === 'false'){
+    submitForGradeTOC2Disabled = 'true';
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC1'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC1'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC2'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC2'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'].disabled=true;
+  }
+}
+
+var exitTOC1Disabled = 'false';
+function disableExitTOC1(){
+  if (exitTOC1Disabled === 'false'){
+    exitTOC1Disabled = 'true';
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC2'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC2'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC1'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC1'].disabled=true;
+  }
+}
+
+var exitTOC2Disabled = 'false';
+function disableExitTOC2(){
+  if (exitTOC2Disabled === 'false'){
+    exitTOC2Disabled = 'true';
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC1'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'])
+      document.forms[0].elements['tableOfContentsForm:submitForGradeTOC2'].disabled=true;
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC1'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC1'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    if (document.forms[0].elements['tableOfContentsForm:exitTOC2'])
+      document.forms[0].elements['tableOfContentsForm:exitTOC2'].disabled=true;
+  }
+}
+
+var disabledFeedback = 'false';
+function disableFeedback(){
+  if (disabledFeedback === 'false'){
+    disabledFeedback = 'true';
+    for (var i=0; i < document.links.length; i++){
+      if (document.links[i].id === 'takeAssessmentForm:assessmentDeliveryHeading:showTOC')
+        document.links[i].disabled = true;
+    }
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    for (var i=0; i < document.links.length; i++){
+      if (document.links[i].id == 'takeAssessmentForm:assessmentDeliveryHeading:showFeedback')
+        document.links[i].disabled = true;
+    }
+  }
+}
+
+var disabledTOC = 'false';
+function disableTOC(){
+  if (disabledTOC === 'false'){
+    disabledTOC = 'true';
+    for (var i=0; i < document.links.length; i++){
+      if (document.links[i].id == 'takeAssessmentForm:assessmentDeliveryHeading:showFeedback')
+        document.links[i].disabled = true;
+    }
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;  
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable feeback link & action
+    for (var i=0; i < document.links.length; i++){
+      if (document.links[i].id == 'takeAssessmentForm:assessmentDeliveryHeading:showTOC')
+        document.links[i].disabled = true;
+    }
+  }
+}
+
+function disableTOCFeedback(){
+  for (var i=0; i < document.links.length; i++){
+    if (document.links[i].id == 'takeAssessmentForm:assessmentDeliveryHeading:showTOC')
+      document.links[i].disabled = true;
+    if (document.links[i].id == 'takeAssessmentForm:assessmentDeliveryHeading:showFeedback')
+      document.links[i].disabled = true;
+  }
+}
+
+var nextDisabled = 'false';
+function disableNext(){
+  if (nextDisabled === 'false'){
+    nextDisabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true; 
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+  }
+}
+
+var previousDisabled = 'false';
+function disablePrevious(){
+  if (previousDisabled === 'false'){
+    previousDisabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;   
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+  }
+}
+
+var submitDisabled = 'false';
+function disableSubmit(){
+  if (submitDisabled === 'false'){
+    submitDisabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;  
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+  }
+}
+
+var submit1Disabled = 'false';
+function disableSubmit1(){
+  if (submit1Disabled === 'false'){
+    submit1Disabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;  
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+  }
+}
+
+var saveDisabled = 'false';
+function disableSave(){
+  if (saveDisabled === 'false'){
+    saveDisabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;
+  }
+}
+
+
+var saveDisabled = 'false';
+function disableSaveAndExit(){
+  if (saveDisabled === 'false'){
+    saveDisabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;  
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+  }
+}
+
+var saveDisabled2 = 'false';
+function disableSaveAndExit2(){
+  if (saveDisabled2 === 'false'){
+    saveDisabled2 = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;    
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+  }
+}
+
+var cancelDisabled = 'false';
+function disableCancel(){
+  if (cancelDisabled === 'false'){
+    cancelDisabled = 'true';
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:cancel'])
+      document.forms[0].elements['takeAssessmentForm:cancel'].disabled=true;
+  }
+}
+
+var quitDisabled = 'false';
+function disableQuit(){
+  if (quitDisabled === 'false'){
+    quitDisabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+  }
+}
+
+
+var submitForGradeDisabled = 'false';
+function disableSubmitForGrade(){
+  if (submitForGradeDisabled === 'false'){
+    submitForGradeDisabled = 'true';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:save'])
+      document.forms[0].elements['takeAssessmentForm:save'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=true;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade']) {
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=true;
+}
+  }
+}
+
+function enableSubmitForGrade(){
+  if (submitForGradeDisabled === 'true'){
+    submitForGradeDisabled = 'false';
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=false;
+  }
+}
+
+function enableSave(){
+  if (saveDisabled === 'true'){
+    saveDisabled = 'false';
+    disableTOCFeedback();
+    if (document.forms[0].elements['takeAssessmentForm:next'])
+      document.forms[0].elements['takeAssessmentForm:next'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:previous'])
+      document.forms[0].elements['takeAssessmentForm:previous'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:quit'])
+      document.forms[0].elements['takeAssessmentForm:quit'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit2'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit2'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm'])
+      document.forms[0].elements['takeAssessmentForm:submitForm'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:submitForm1'])
+      document.forms[0].elements['takeAssessmentForm:submitForm1'].disabled=false;
+    if (document.forms[0].elements['takeAssessmentForm:submitForGrade'])
+      document.forms[0].elements['takeAssessmentForm:submitForGrade'].disabled=false;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['takeAssessmentForm:saveAndExit'])
+      document.forms[0].elements['takeAssessmentForm:saveAndExit'].disabled=false;
+  }
+}
+
+var continueDisabled = 'false';
+function disableContinue(){
+  if (continueDisabled === 'false'){
+    continueDisabled = 'true';
+    if (document.forms[0].elements['saveForLater:returnToAssessment'])
+      document.forms[0].elements['saveForLater:returnToAssessment'].disabled=true;  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['saveForLater:continue'])
+      document.forms[0].elements['saveForLater:continue'].disabled=true;
+  }
+}
+
+var returnToAssessmentDisabled = 'false';
+function disableReturnToAssessment(){
+    if (returnToAssessmentDisabled === 'false'){
+      returnToAssessmentDisabled = 'true';
+    if (document.forms[0].elements['saveForLater:continue'])
+      document.forms[0].elements['saveForLater:continue'].disabled=true;
+  }
+  else{ // any subsequent click disable button & action
+    if (document.forms[0].elements['saveForLater:returnToAssessment'])
+      document.forms[0].elements['saveForLater:returnToAssessment'].disabled=true;
+  }
+}
+
+
+
+//  show Processing for file upload questions 
+//  taking out of deliveryAssessment.jsp, so authoring can use it too.   
+
+function showNotif(item, button,formName)
+{
+
+/*
+        if (button !="noBlock")
+        {
+                eval("document." + formName + "." + button + ".disabled=true");
+        }
+*/
+        if (item !== "noNotif") {
+                var browserType;
+                if (document.all) {browserType = "ie";}
+                if (window.navigator.userAgent.toLowerCase().match("gecko")) {browserType= "gecko";}
+                if (browserType === "gecko" )
+                        document.showItem = eval('document.getElementById(item)');
+                else if (browserType === "ie")
+                        document.showItem = eval('document.all[item]');
+                else
+                        document.showItem = eval('document.layers[item]');
+
+                        document.showItem.style.visibility = "visible";
+        }
+
+        for (var i=0;i<document.getElementsByTagName("input").length; i++)
+        {
+                if (document.getElementsByTagName("input").item(i).className == "disableme")
+                {
+                        document.getElementsByTagName("input").item(i).disabled = "disabled";
+                }
+        }
+
+}
+
+function showNotif2(item, button,formName)
+{
+        alert('item: '+item);
+        alert('button: '+button);
+       alert('formname: '+formName);
+        if (button !="noBlock")
+        {
+                eval("document." + formName + "." + button + ".disabled=true");
+        }
+        if (item !="noNotif")
+        {
+                var browserType;
+                if (document.all) {browserType = "ie";}
+                if (window.navigator.userAgent.toLowerCase().match("gecko")) {browserType= "gecko";}
+                if (browserType == "gecko" )
+                        document.showItem = eval('document.getElementById(item)');
+                else if (browserType == "ie")
+                        document.showItem = eval('document.all[item]');
+                else
+                        document.showItem = eval('document.layers[item]');
+
+                        document.showItem.style.visibility = "visible";
+        }
+
+        for (var i=0;i<document.getElementsByTagName("input").length; i++)
+        {
+                if (document.getElementsByTagName("input").item(i).className == "disableme")
+                {
+                        document.getElementsByTagName("input").item(i).disabled = "disabled";
+                }
+        }
+}
+
+function clearIfDefaultString(formField, defaultString) {
+    if(formField.value == defaultString) {
+        formField.value = "";
+    }
+}
+
+
+function submitOnEnter(event, defaultButtonId) {
+    var characterCode;
+    if (event.which) {
+        characterCode = event.which;
+    } else if (event.keyCode) {
+        characterCode = event.keyCode;
+    }
+
+    if (characterCode == 13) {
+        event.returnValue = false;
+        event.cancel = true;
+        document.getElementById(defaultButtonId).click();
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function show(obj) {
+        document.getElementById(obj).style.display = '';
+}
+
+function hide(obj) {
+        document.getElementById(obj).style.display = 'none';
+}
+
+function clickReloadLink(windowToGetFocus){
+    
+
+var newindex = 0;
+for (i=0; i<document.links.length; i++) {
+  if ( document.links[i].id.indexOf("hiddenReloadLink") >=0){
+    newindex = i;
+    break;
+  }
+}
+
+document.links[newindex].onclick();
+windowToGetFocus.focus();
+
+return false;
+}
+
+/* Converts implicit form control labeling to explicit by
+ * adding an unique id to form controls if they don't already
+ * have one and then setting the corresponding label element's
+ * for attribute to form control's id value. This explicit 
+ * linkage is better supported by adaptive technologies.
+ * See SAK-18851 for original.
+ */
+fixImplicitLabeling = function(){
+  var idCounter = 0;
+  $('label select,label input').each(function (idx, oInput) {
+    if (!oInput.id) {
+       idCounter++;
+       $(oInput).attr('id', 'a11yAutoGenInputId' + idCounter.toString());
+    }
+    if (!$(oInput).parents('label').eq(0).attr('for')) {
+       $(oInput).parents('label').eq(0).attr('for', $(oInput).attr('id'));
+    }
+  });
+};
+
+</script>
+
+
+<script type="text/JavaScript">
+
+function checkRadio()
+{
+  for (i=0; i<document.forms[0].elements.length; i++)
+  {
+    if (document.forms[0].elements[i].type == "radio")
+    {
+      if (document.forms[0].elements[i].defaultChecked == true)
+      {
+        document.forms[0].elements[i].click();
+      }
+    }
+  }
+}
+
+var formatByQuestion = 'false';
+function setLocation()
+{
+    // reset questionindex to avoid a Safari bug
+	partIndex = document.forms[0].elements['takeAssessmentForm:partIndex'].value;
+	questionIndex = document.forms[0].elements['takeAssessmentForm:questionIndex'].value;
+ 	if (!formatByQuestion)
+           document.forms[0].elements['takeAssessmentForm:questionIndex'].value = "0";
+
+	formatByPart = document.forms[0].elements['takeAssessmentForm:formatByPart'].value;
+	formatByAssessment = document.forms[0].elements['takeAssessmentForm:formatByAssessment'].value;
+	
+    //alert("partIndex = " + partIndex);
+    //alert("questionIndex = " + questionIndex);
+	//alert("formatByPart = " + formatByPart);
+	//alert("formatByAssessment = " + formatByAssessment);
+	// We don't want to set the location when the index points to fist question on the page
+	// We only set the location in following cases:
+	// 1. If it is formatByPart, we set the location when it is not the first question of each part
+	// 2. If it is formatByAssessment, we set the location when:
+	//    a. it is not the first question of the first part
+	//    b. it is a question in any parts other than the first one
+	if ((formatByPart == 'true' && questionIndex != 0) || (formatByAssessment == 'true' && ((partIndex == 0 && questionIndex !=0) || partIndex != 0))) {
+		window.location = '#p' + ++partIndex + 'q' + ++questionIndex;
+		//alert("from TOC:" + window.location);
+	}
+}
+
+var redrawAnchorName = '';
+function setLocation2()
+{
+	//alert("redrawAnchorName=" + redrawAnchorName);	
+	if (redrawAnchorName != null && redrawAnchorName != "") {
+		window.location = '#' + redrawAnchorName;
+		//alert("from redraw: window.location..." + window.location);
+	}
+}
+
+function noenter(){
+return!(window.event && window.event.keyCode == 13);
+}
+
+function saveTime()
+{
+  if((typeof (document.forms[0].elements['takeAssessmentForm:assessmentDeliveryHeading:elapsed'])!=undefined) && ((document.forms[0].elements['takeAssessmentForm:assessmentDeliveryHeading:elapsed'])!=null) ){
+  pauseTiming = 'false';
+  document.forms[0].elements['takeAssessmentForm:assessmentDeliveryHeading:elapsed'].value=loaded/10;
+ }
+}
+
+function disableRationale(){
+	var textAreas = document.getElementsByTagName("textarea");
+	//alert(textAreas[0].id);
+	//alert(textAreas[0].id.endsWith('rationale'));
+	if (textAreas.length == 1 && textAreas[0].id.endsWith('rationale')) {
+		textAreas[0].disabled = true;
+	}
+}
+
+function enableRationale(){
+	var textAreas = document.getElementsByTagName("textarea");
+	//alert(textAreas[0].id);
+	//alert(textAreas[0].id.endsWith('rationale'));
+	if (textAreas.length == 1 && textAreas[0].id.endsWith('rationale')) {
+		textAreas[0].disabled = false;
+	}
+
+	/* Somehow the following for-loop becomes an infinite look of enableRationale(). No time to look into this now. Use above work around. 
+	   Should come back later to figure out the reason.
+	for(i=0; i < textAreas.length; i++){
+		alert(i);
+		if (textAreas[i].id.endsWith('rationale')) {
+        textAreas[i].disabled = false;
+		return;
+		}
+    }
+	*/
+}
+
+// modified from tompuleo.com
+String.prototype.endsWith = function(txt)
+{
+  var rgx;
+  rgx = new RegExp(txt+"$");
+
+  return this.match(rgx) != null; 
+}
+
+function clickSaCharCountLink(field){
+var insertlinkid= field.id.replace("getAaCharCount", "hiddenlink");
+
+var newindex = 0;
+for (i=0; i<document.links.length; i++) {
+  if(document.links[i].id == insertlinkid)
+  {
+    newindex = i;
+    break;
+  }
+}
+
+document.links[newindex].onclick();
+}
+
+</script>
+
+
+<input id="takeAssessmentForm:partIndex" type="hidden" name="takeAssessmentForm:partIndex" value="0">
+<input id="takeAssessmentForm:questionIndex" type="hidden" name="takeAssessmentForm:questionIndex" value="0">
+<input id="takeAssessmentForm:formatByPart" type="hidden" name="takeAssessmentForm:formatByPart" value="false">
+<input id="takeAssessmentForm:formatByAssessment" type="hidden" name="takeAssessmentForm:formatByAssessment" value="true">
+
+<input id="takeAssessmentForm:lastSubmittedDate2" type="hidden" name="takeAssessmentForm:lastSubmittedDate2" value="0">
+
+<!-- DONE BUTTON FOR PREVIEW -->
+
+ 
+     
+     
+ 
+
+
+<!-- IF A SECURE DELIVERY MODULE HAS BEEN SELECTED, INJECT ITS HTML FRAGMENT (IF ANY) HERE -->
+
+
+<!-- HEADING -->
+
+
+<!--
+
+-->
+
+
+<p>
+</p><h3 style="insColor insBak">
+   Ch. 14 Sec 5,7,8 Ch. 17 Sec 1,4,5,6 
+</h3>
+<p></p>
+
+<p class="navIntraTool">
+  
+
+<!-- SHOW FEEDBACK LINK FOR TAKE ASSESSMENT AND TAKE ASSESSMENT VIA URL -->
+    
+     
+     
+     
+    
+
+<!-- SHOW FEEDBACK LINK FOR PREVIEW ASSESSMENT -->
+    
+     
+     
+     
+    
+
+    
+  
+
+
+<!-- TABLE OF CONTENT LINK FOR TAKE ASSESSMENT AND TAKE ASSESSMENT VIA URL -->
+  
+    
+    
+  
+
+
+<!-- TABLE OF CONTENT LINK FOR PREVIEW ASSESSMENT -->
+ 
+    
+    
+  
+
+
+<!-- RETURN TO ASSESSMENT PAGE LINK FOR REVIEW ASSESSMENT -->
+  
+    
+    
+  <a href="https://scholar.vt.edu/portal/tool/d705c19d-ec7b-40d6-a41c-3df92ed0db81/jsf/select/selectIndex#" title="Return to Assessment List" onclick="clearFormHiddenParams_takeAssessmentForm(&#39;takeAssessmentForm&#39;);document.forms[&#39;takeAssessmentForm&#39;][&#39;takeAssessmentForm:_idcl&#39;].value=&#39;takeAssessmentForm:assessmentDeliveryHeading:_id29&#39;; document.forms[&#39;takeAssessmentForm&#39;].submit(); return false;">Return to Assessment List</a>
+</p>
+
+<!-- GRADER COMMENT FOR REVIEW ASSESSMENT -->
+<br> 
+                       
+
+
+
+
+
+<!--
+
+-->
+
+<!-- BEGIN OF TIMER -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HIDE / SHOW TIMER BAR -->
+
+<!-- END OF TIMER -->
+
+
+
+
+
+
+<script type="text/JavaScript">
+function clickSubmitForGrade(){
+  var newindex = 0;
+  for (i=0; i<document.links.length; i++) {
+    if(document.links[i].id == "takeAssessmentForm:assessmentDeliveryHeading:submitforgrade")
+    {
+      newindex = i;
+      break;
+    }
+  }
+  document.links[newindex].onclick();
+}
+</script>
+
+
+
+  
+  
+  
+
+<p></p>
+
+
+
+
+
+<!-- FORM ... note, move these hiddens to whereever they are needed as fparams-->
+
+<input id="takeAssessmentForm:assessmentID" type="hidden" name="takeAssessmentForm:assessmentID" value="1314828">
+<input id="takeAssessmentForm:assessTitle" type="hidden" name="takeAssessmentForm:assessTitle" value="Ch. 14 Sec 5,7,8 Ch. 17 Sec 1,4,5,6 ">
+<!-- h:inputHidden id="ItemIdent" value="#{item.ItemIdent}"/ -->
+<!-- h:inputHidden id="ItemIdent2" value="#{item.itemNo}"/ -->
+<!-- h:inputHidden id="currentSection" value="#{item.currentSection}"/ -->
+<!-- h:inputHidden id="insertPosition" value="#{item.insertPosition}"/ -->
+
+
+
+      
+      
+      
+
+
+
+
+  
+    
+     <!-- f:subview id="parts" -->
+      
+      
+       
+      
+      
+         
+      <!-- h:outputText value="#{part.unansweredQuestions}/#{part.questions} " / -->
+      <!-- h:outputText value="#{deliveryMessages.ans_q}, " / -->
+      
+
+      
+      
+
+  <!-- PART ATTACHMENTS -->
+  <!--
+* $Id: part_attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- 2a ATTACHMENTS -->
+ 
+  
+  
+    
+	  
+        
+
+      
+      
+
+	  
+        
+      
+	  
+
+      
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+        
+      
+      
+        
+        
+      
+       
+        
+    
+      
+    
+  
+
+
+
+
+   
+
+   
+
+      
+        
+
+
+         
+           
+           
+           
+           
+         
+
+
+
+        
+
+
+          
+          
+           
+           
+<!--
+* $Id: deliverAudioRecording.jsp 104706 2012-02-15 07:32:19Z miguel.carro@samoo.es $
+
+-->
+
+
+
+
+
+
+
+<!-- ATTACHMENTS -->
+<!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+
+
+
+
+  
+    
+		
+
+      
+      
+      
+		
+		
+      
+        
+      
+      
+      
+      
+      
+		
+      
+    
+  
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+		
+	
+
+
+
+  
+    
+      
+      
+    
+    
+  
+  
+  
+    
+      
+	  
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+
+           
+          
+          
+           
+           <!--
+* $Id: deliverFileUpload.jsp 97673 2011-08-29 23:17:13Z ktsao@stanford.edu $
+
+-->
+
+
+
+<!-- ATTACHMENTS -->
+<!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+
+  
+  
+
+  
+  <!-- note that target represent the location where the upload medis will be temporarily stored -->
+  <!-- For ItemGradingData, it is very important that target must be in this format: -->
+  <!-- assessmentXXX/questionXXX/agentId -->
+  <!-- please check the valueChangeListener to get the final destination -->
+  
+  
+  
+
+
+
+  
+  <!-- note that target represent the location where the upload medis will be temporarily stored -->
+  <!-- For ItemGradingData, it is very important that target must be in this format: -->
+  <!-- assessmentXXX/questionXXX/agentId -->
+  <!-- please check the valueChangeListener to get the final destination -->
+  
+  
+  
+  
+  
+
+
+
+
+      
+
+      
+        
+          
+          
+             
+          
+        
+        
+         
+         	
+         
+        
+        
+          
+            
+            
+            
+            
+            
+            
+          
+        
+      
+
+
+
+
+	
+	
+		
+	
+
+
+  
+
+
+  
+    
+      
+      
+    
+    
+  
+  
+  
+     
+      
+  	  
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+          
+          
+	       
+	       
+<!--
+* $Id: $
+
+-->
+<!-- ATTACHMENTS -->
+<!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+      
+      
+      
+      
+      
+	  
+ 	  
+
+      
+
+  
+
+
+
+
+
+
+	
+	
+		
+	
+
+
+
+
+
+  
+    
+      
+      
+    
+    
+  
+  
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+      
+      
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+	       
+          
+          
+           
+           
+<!--
+* $Id: deliverFillInTheBlank.jsp 96833 2011-08-11 17:04:08Z ktsao@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+<!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+
+  
+      
+      
+      
+      
+      
+      
+      
+
+  
+
+
+
+
+
+	
+	
+		
+	
+
+
+
+
+
+  
+    
+      
+      
+    
+    
+  
+  
+  
+    
+      
+      
+    
+    
+  
+  
+  
+    
+      
+  	  
+    
+
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+          
+          
+           
+            
+
+<!--
+* $Id: deliverMatching.jsp 96833 2011-08-11 17:04:08Z ktsao@stanford.edu $
+
+-->
+  
+  <!-- ATTACHMENTS -->
+  <!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+  
+   
+     
+   
+  
+  
+  
+    
+      
+      
+      
+      
+      
+      
+   
+   
+     
+       
+     
+   
+   
+     
+     
+	   <!-- The above != 'null' is for SAK-5475. Once it gets fixed, we can remove this condition -->
+       
+       
+       
+     
+  
+  
+
+
+
+
+	
+	
+		
+	
+
+
+
+  
+    
+      
+      
+    
+    
+  
+ 
+  
+    
+      
+      
+    
+    
+  
+    
+  
+    
+      
+ 	  
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+          
+          <!-- // CALCULATED_QUESTION -->
+           
+            
+<!--
+* $Id: deliverCalculatedQuestion.jsp 59565 2009-04-02 15:30:35Z arwhyte@umich.edu $
+
+-->
+  <!-- ATTACHMENTS -->
+<!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+
+  
+      
+      
+      
+      
+        
+	  
+      
+
+  
+
+
+
+
+
+
+	
+	
+		
+	
+
+
+
+  
+  
+    
+    
+      
+    
+
+  
+  
+    
+    
+    
+    
+    
+  
+  
+    
+    
+    
+    
+    
+  
+
+
+           
+          
+          
+           
+           
+<!--
+* $Id: deliverMultipleChoiceSingleCorrect.jsp 115378 2012-10-31 18:13:15Z ottenhoff@longsight.com $
+
+-->
+
+<script type="text/javascript" language="JavaScript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" language="JavaScript" src="jquery-ui-1.7.2.custom.min.js"></script>
+	
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- ATTACHMENTS -->
+  <!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+
+  
+  
+  
+       
+  
+  
+
+
+  
+    
+      
+      
+      
+      
+    
+    
+      	  	 
+	 	 
+	 	 
+	   	 
+	   	 
+	  
+     	
+      
+    
+    
+      
+   	   <!-- The above != 'null' is for SAK-5475. Once it gets fixed, we can remove this condition -->
+       
+       
+       
+      
+    
+  
+
+  
+  
+
+  
+    
+    
+    
+    
+    
+  
+
+
+	
+
+
+
+
+
+
+
+	
+	
+		
+	
+
+
+
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+      
+      
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+          
+          
+           
+           
+<!--
+
+-->
+  
+  <!-- ATTACHMENTS -->
+  <!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+  
+    
+      
+      
+      
+      
+    
+    
+     
+     
+     
+     
+     
+     
+    
+    
+       
+	   <!-- The above != 'null' is for SAK-5475. Once it gets fixed, we can remove this condition -->
+       
+       
+       
+      
+    
+  
+
+  
+    
+    
+    
+    
+    
+  
+
+
+
+
+	
+	
+		
+	
+
+
+
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+      
+      
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+          
+          
+           
+           
+<!--
+* $Id: deliverShortAnswer.jsp 98973 2011-10-05 05:52:39Z ktsao@stanford.edu $
+
+-->
+
+
+<!-- ATTACHMENTS -->
+<!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+	
+
+
+
+
+
+  
+     
+      
+      
+     
+    
+  
+  
+  
+     
+      
+      
+     
+    
+  
+  
+  
+      
+      
+	  
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+          
+          
+           
+           
+<!--
+* $Id: deliverTrueFalse.jsp 96833 2011-08-11 17:04:08Z ktsao@stanford.edu $
+
+-->
+  
+  <!-- ATTACHMENTS -->
+  <!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+
+  
+   
+      
+        
+          
+          
+          
+          
+       
+     
+   
+   
+      
+        
+      
+   
+  
+
+  
+    
+    
+    
+    
+    
+  
+
+
+	
+		
+	 
+
+
+
+
+
+
+
+	
+	
+		
+	
+
+
+
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+    
+      
+      
+    
+    
+  
+  
+  
+    
+          
+	  
+    
+
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+           
+           
+           
+           
+           
+
+
+
+
+
+
+
+
+<!--
+
+-->
+
+
+ 
+ 
+  
+  
+  <!-- ATTACHMENTS -->
+  <!--
+* $Id: attachment.jsp 6874 2006-03-22 17:01:47Z hquinn@stanford.edu $
+
+-->
+<!-- ATTACHMENTS -->
+  
+
+  
+    
+      
+      
+      
+
+	  
+  	    
+      
+	  
+      
+	
+      
+        <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	    
+           
+         
+      
+      
+        
+        
+      
+     
+      
+      
+    
+  
+  
+
+  <!-- deliverMatrixChoice.jsp -->
+<!-- question:ItemContentsBean -->
+<!-- delivery:DeliveryBean -->
+<!-- selection: SelectionBean.java under delivery answer is AnswerIfc -->
+<div class="tier1">
+
+
+ 
+           
+  
+ 	
+ 	
+
+</div>
+  
+ 		
+  
+    
+    
+    
+    
+    
+  
+
+
+
+
+	
+	
+		
+	
+
+
+
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+      
+      
+    
+    
+  
+
+  
+    
+      
+      
+    
+    
+	
+      
+        
+          <!-- $Id: mimeicon.jsp 243 2005-06-24 02:43:50Z esmiley@stanford.edu $
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+          
+          
+            
+          
+        
+        
+          
+          
+        
+      
+    
+  
+
+
+           
+           
+          
+           
+
+        
+      
+
+     <!-- /f:subview -->
+
+    
+  
+
+<div class="tier1"><table border="0" width="100%">
+<tbody>
+<tr>
+<td><h4><table width="100%">
+<tbody>
+<tr>
+<td class="navView">Part 1 of 1 - </td>
+<td class="navList">3.0/ 9.0 Points</td>
+</tr>
+</tbody>
+</table>
+</h4><div class="tier1"><br></div><div class="tier2"><table width="100%">
+<tbody>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q1"></a>Question 1 of 9</h5></td>
+<td class="navList"> 0.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3"><script type="text/javascript">var selectedRadioButton5225043;function uncheckRadioButtons5225043(radioButton) {if (selectedRadioButton5225043 != null) {selectedRadioButton5225043.checked = false;}selectedRadioButton5225043 = radioButton;selectedRadioButton5225043.checked = true;}</script>1.	For questions 1-2, please go to &lt;a href="http://phet.colorado.edu/sims/pendulum-lab/pendulum-lab_en.html "&gt; http://phet.colorado.edu/sims/pendulum-lab/pendulum-lab_en.html&lt;/a&gt; and begin to play with the simulation. Once you are familiar with the program, click reset, click on the photogate timer, set the length of the pendulum to 1 meter, the mass to 1 kg, start the pendulum at 35 degrees and click play. Also click start on the photogate timer (it will measure the period: the time for one full oscillation). Now increase the mass of the pendulum bob to 2 kg, keeping the length and angle the same. Next, reset the mass to 1 kg and change the length to 2 m and try again. What do you notice about the period?<table border="0">
+<tbody>
+</tbody>
+</table>
+<div class="mcscFixUp"><table>
+<tbody>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId1"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:0:deliverMultipleChoiceSingleCorrect:_id863" value="28911094" disabled="disabled" id="a11yAutoGenInputId1">  A. The period decreased when mass was increased, the period increased when the length was increased.
+<br>
+</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId2"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:0:deliverMultipleChoiceSingleCorrect:_id863" value="28911095" disabled="disabled" id="a11yAutoGenInputId2">  B. The period increased when mass was increased, the period increased when the length was increased.
+<br>
+</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId3"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:0:deliverMultipleChoiceSingleCorrect:_id863" value="28911093" disabled="disabled" id="a11yAutoGenInputId3">  C. The period did not change when mass was increased, the period increased when the length was increased. 
+<br>
+
+<br>
+</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:0:deliverMultipleChoiceSingleCorrect:_id866:3:image2" src="crossmark.gif" alt="Incorrect" height="16" width="16"></td>
+<td><label for="a11yAutoGenInputId4"><input type="radio" checked="" name="takeAssessmentForm:_id58:0:_id120:0:deliverMultipleChoiceSingleCorrect:_id863" value="28911096" disabled="disabled" id="a11yAutoGenInputId4">  D. The period was constant.</label></td>
+
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><script>$('div.mcscFixUp').each(function(index1,elBlockToFix){$(elBlockToFix).find('div.mcscFixUpSource label').each(function(index,elLabelAndInputToMove){$(elBlockToFix).find('div.mcscFixUpTarget:first').replaceWith($(elLabelAndInputToMove));$(elLabelAndInputToMove).parent('td').next('td').contents().appendTo(elLabelAndInputToMove);$(elLabelAndInputToMove).parent('td').next('td').remove();});$(elBlockToFix).find('div.mcscFixUpSource').remove();});</script><br><br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:0:deliverMultipleChoiceSingleCorrect:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key:  </label><span id="takeAssessmentForm:_id58:0:_id120:0:deliverMultipleChoiceSingleCorrect:answerKeyMC">C</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q2"></a>Question 2 of 9</h5></td>
+<td class="navList"> 0.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3"><script type="text/javascript">var selectedRadioButton5225042;function uncheckRadioButtons5225042(radioButton) {if (selectedRadioButton5225042 != null) {selectedRadioButton5225042.checked = false;}selectedRadioButton5225042 = radioButton;selectedRadioButton5225042.checked = true;}</script>2.	Now reset the pendulum to have a mass of 1kg and length of 1 m. Let’s now look at the effects that different gravitational accelerations would have on the pendulum. Keeping the angle at 25 degrees, observe the period on the Moon, the Earth and Jupiter (these are in order of increasing acceleration due to gravity). What do you notice?<table border="0">
+<tbody>
+</tbody>
+</table>
+<div class="mcscFixUp"><table>
+<tbody>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId5"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:1:deliverMultipleChoiceSingleCorrect:_id863" value="28911092" disabled="disabled" id="a11yAutoGenInputId5">  A. As the acceleration due to gravity is increased, the period does not follow any pattern.</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:1:deliverMultipleChoiceSingleCorrect:_id866:1:image2" src="crossmark.gif" alt="Incorrect" height="16" width="16"></td>
+<td><label for="a11yAutoGenInputId6"><input type="radio" checked="" name="takeAssessmentForm:_id58:0:_id120:1:deliverMultipleChoiceSingleCorrect:_id863" value="28911090" disabled="disabled" id="a11yAutoGenInputId6">  B. As the acceleration due to gravity is increased, the period is increased.<br>
+</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId7"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:1:deliverMultipleChoiceSingleCorrect:_id863" value="28911091" disabled="disabled" id="a11yAutoGenInputId7">  C. As the acceleration due to gravity is increased, the period remains the same.<br>
+</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId8"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:1:deliverMultipleChoiceSingleCorrect:_id863" value="28911089" disabled="disabled" id="a11yAutoGenInputId8">  D. As the acceleration due to gravity is increased, the period is decreased.<br>
+<br>
+</label></td>
+
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><script>$('div.mcscFixUp').each(function(index1,elBlockToFix){$(elBlockToFix).find('div.mcscFixUpSource label').each(function(index,elLabelAndInputToMove){$(elBlockToFix).find('div.mcscFixUpTarget:first').replaceWith($(elLabelAndInputToMove));$(elLabelAndInputToMove).parent('td').next('td').contents().appendTo(elLabelAndInputToMove);$(elLabelAndInputToMove).parent('td').next('td').remove();});$(elBlockToFix).find('div.mcscFixUpSource').remove();});</script><br><br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:1:deliverMultipleChoiceSingleCorrect:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key:  </label><span id="takeAssessmentForm:_id58:0:_id120:1:deliverMultipleChoiceSingleCorrect:answerKeyMC">D</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q3"></a>Question 3 of 9</h5></td>
+<td class="navList"> 1.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3"><script type="text/javascript">var selectedRadioButton5225041;function uncheckRadioButtons5225041(radioButton) {if (selectedRadioButton5225041 != null) {selectedRadioButton5225041.checked = false;}selectedRadioButton5225041 = radioButton;selectedRadioButton5225041.checked = true;}</script>In general the restoring force of a pendulum is given by
+<center>
+	<i>F<sub>θ</sub> = -mg</i> sin<i>θ</i></center>
+What approximation must be used to make this force consistent with simple harmonic motion?<table border="0">
+<tbody>
+</tbody>
+</table>
+<div class="mcscFixUp"><table>
+<tbody>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId9"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:2:deliverMultipleChoiceSingleCorrect:_id863" value="28911085" disabled="disabled" id="a11yAutoGenInputId9">  A. The circular approximation</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:2:deliverMultipleChoiceSingleCorrect:_id866:1:image" src="checkmark.gif" alt="Correct"></td>
+<td><label for="a11yAutoGenInputId10"><input type="radio" checked="" name="takeAssessmentForm:_id58:0:_id120:2:deliverMultipleChoiceSingleCorrect:_id863" value="28911088" disabled="disabled" id="a11yAutoGenInputId10">  B. The small angle approximation</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId11"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:2:deliverMultipleChoiceSingleCorrect:_id863" value="28911087" disabled="disabled" id="a11yAutoGenInputId11">  C. π is approximately equal to 3.14</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId12"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:2:deliverMultipleChoiceSingleCorrect:_id863" value="28911086" disabled="disabled" id="a11yAutoGenInputId12">  D. The Sterling approximation</label></td>
+
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><script>$('div.mcscFixUp').each(function(index1,elBlockToFix){$(elBlockToFix).find('div.mcscFixUpSource label').each(function(index,elLabelAndInputToMove){$(elBlockToFix).find('div.mcscFixUpTarget:first').replaceWith($(elLabelAndInputToMove));$(elLabelAndInputToMove).parent('td').next('td').contents().appendTo(elLabelAndInputToMove);$(elLabelAndInputToMove).parent('td').next('td').remove();});$(elBlockToFix).find('div.mcscFixUpSource').remove();});</script><br><br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:2:deliverMultipleChoiceSingleCorrect:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key:  </label><span id="takeAssessmentForm:_id58:0:_id120:2:deliverMultipleChoiceSingleCorrect:answerKeyMC">B</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q4"></a>Question 4 of 9</h5></td>
+<td class="navList"> 0.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3"><script type="text/javascript">var selectedRadioButton5225039;function uncheckRadioButtons5225039(radioButton) {if (selectedRadioButton5225039 != null) {selectedRadioButton5225039.checked = false;}selectedRadioButton5225039 = radioButton;selectedRadioButton5225039.checked = true;}</script>A thermometer is placed in a cup of warm water to measure its temperature.  The system reaches an equilibrium condition when the _______ between the thermometer and the water causes no further change to the system.<table border="0">
+<tbody>
+</tbody>
+</table>
+<div class="mcscFixUp"><table>
+<tbody>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId13"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:3:deliverMultipleChoiceSingleCorrect:_id863" value="28911079" disabled="disabled" id="a11yAutoGenInputId13">  A. differences</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId14"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:3:deliverMultipleChoiceSingleCorrect:_id863" value="28911078" disabled="disabled" id="a11yAutoGenInputId14">  B. interactions</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:3:deliverMultipleChoiceSingleCorrect:_id866:2:image2" src="crossmark.gif" alt="Incorrect" height="16" width="16"></td>
+<td><label for="a11yAutoGenInputId15"><input type="radio" checked="" name="takeAssessmentForm:_id58:0:_id120:3:deliverMultipleChoiceSingleCorrect:_id863" value="28911080" disabled="disabled" id="a11yAutoGenInputId15">  C. exchange</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId16"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:3:deliverMultipleChoiceSingleCorrect:_id863" value="28911077" disabled="disabled" id="a11yAutoGenInputId16">  D. glass</label></td>
+
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><script>$('div.mcscFixUp').each(function(index1,elBlockToFix){$(elBlockToFix).find('div.mcscFixUpSource label').each(function(index,elLabelAndInputToMove){$(elBlockToFix).find('div.mcscFixUpTarget:first').replaceWith($(elLabelAndInputToMove));$(elLabelAndInputToMove).parent('td').next('td').contents().appendTo(elLabelAndInputToMove);$(elLabelAndInputToMove).parent('td').next('td').remove();});$(elBlockToFix).find('div.mcscFixUpSource').remove();});</script><br><br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:3:deliverMultipleChoiceSingleCorrect:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key:  </label><span id="takeAssessmentForm:_id58:0:_id120:3:deliverMultipleChoiceSingleCorrect:answerKeyMC">B</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q5"></a>Question 5 of 9</h5></td>
+<td class="navList"> 1.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3"><script type="text/javascript">var selectedRadioButton5225047;function uncheckRadioButtons5225047(radioButton) {if (selectedRadioButton5225047 != null) {selectedRadioButton5225047.checked = false;}selectedRadioButton5225047 = radioButton;selectedRadioButton5225047.checked = true;}</script>In driven oscillations, the fact that there is a peak in the driving frequencies close to the natural frequency of the system is called a _______.<table border="0">
+<tbody>
+</tbody>
+</table>
+<div class="mcscFixUp"><table>
+<tbody>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId17"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:4:deliverMultipleChoiceSingleCorrect:_id863" value="28911118" disabled="disabled" id="a11yAutoGenInputId17">  A. forced oscillation</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:4:deliverMultipleChoiceSingleCorrect:_id866:1:image" src="checkmark.gif" alt="Correct"></td>
+<td><label for="a11yAutoGenInputId18"><input type="radio" checked="" name="takeAssessmentForm:_id58:0:_id120:4:deliverMultipleChoiceSingleCorrect:_id863" value="28911121" disabled="disabled" id="a11yAutoGenInputId18">  B. resonance</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId19"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:4:deliverMultipleChoiceSingleCorrect:_id863" value="28911119" disabled="disabled" id="a11yAutoGenInputId19">  C. coincidence </label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId20"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:4:deliverMultipleChoiceSingleCorrect:_id863" value="28911120" disabled="disabled" id="a11yAutoGenInputId20">  D. tautology </label></td>
+
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><script>$('div.mcscFixUp').each(function(index1,elBlockToFix){$(elBlockToFix).find('div.mcscFixUpSource label').each(function(index,elLabelAndInputToMove){$(elBlockToFix).find('div.mcscFixUpTarget:first').replaceWith($(elLabelAndInputToMove));$(elLabelAndInputToMove).parent('td').next('td').contents().appendTo(elLabelAndInputToMove);$(elLabelAndInputToMove).parent('td').next('td').remove();});$(elBlockToFix).find('div.mcscFixUpSource').remove();});</script><br><br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:4:deliverMultipleChoiceSingleCorrect:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key:  </label><span id="takeAssessmentForm:_id58:0:_id120:4:deliverMultipleChoiceSingleCorrect:answerKeyMC">B</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q6"></a>Question 6 of 9</h5></td>
+<td class="navList"> 1.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3"><script type="text/javascript">var selectedRadioButton5225040;function uncheckRadioButtons5225040(radioButton) {if (selectedRadioButton5225040 != null) {selectedRadioButton5225040.checked = false;}selectedRadioButton5225040 = radioButton;selectedRadioButton5225040.checked = true;}</script>A material in a temperature regime in which linear thermal expansion holds is heated an amount Δ<i>T</i> and is measured to expand by Δ<i>L</i>.  What is the expansion when the temperature is raised to 3Δ<i>T</i>?<table border="0">
+<tbody>
+</tbody>
+</table>
+<div class="mcscFixUp"><table>
+<tbody>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId21"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:5:deliverMultipleChoiceSingleCorrect:_id863" value="28911084" disabled="disabled" id="a11yAutoGenInputId21">  A. <img alt="" src="mimetex.cgi">Δ<i>L</i></label></td>
+
+<td></td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:5:deliverMultipleChoiceSingleCorrect:_id866:1:image" src="checkmark.gif" alt="Correct"></td>
+<td><label for="a11yAutoGenInputId22"><input type="radio" checked="" name="takeAssessmentForm:_id58:0:_id120:5:deliverMultipleChoiceSingleCorrect:_id863" value="28911081" disabled="disabled" id="a11yAutoGenInputId22">  B. 3Δ<i>L</i></label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId23"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:5:deliverMultipleChoiceSingleCorrect:_id863" value="28911083" disabled="disabled" id="a11yAutoGenInputId23">  C. 1/3Δ<i>L</i></label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId24"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:5:deliverMultipleChoiceSingleCorrect:_id863" value="28911082" disabled="disabled" id="a11yAutoGenInputId24">  D. 9Δ<i>L</i></label></td>
+
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><script>$('div.mcscFixUp').each(function(index1,elBlockToFix){$(elBlockToFix).find('div.mcscFixUpSource label').each(function(index,elLabelAndInputToMove){$(elBlockToFix).find('div.mcscFixUpTarget:first').replaceWith($(elLabelAndInputToMove));$(elLabelAndInputToMove).parent('td').next('td').contents().appendTo(elLabelAndInputToMove);$(elLabelAndInputToMove).parent('td').next('td').remove();});$(elBlockToFix).find('div.mcscFixUpSource').remove();});</script><br><br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:5:deliverMultipleChoiceSingleCorrect:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key:  </label><span id="takeAssessmentForm:_id58:0:_id120:5:deliverMultipleChoiceSingleCorrect:answerKeyMC">B</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q7"></a>Question 7 of 9</h5></td>
+<td class="navList"> 0.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3"><script type="text/javascript">var selectedRadioButton5225044;function uncheckRadioButtons5225044(radioButton) {if (selectedRadioButton5225044 != null) {selectedRadioButton5225044.checked = false;}selectedRadioButton5225044 = radioButton;selectedRadioButton5225044.checked = true;}</script>To change ice to water at a fixed pressure requires adding heat to the system while the system remains at a fixed temperature.  The heat per unit mass added to the system is known as...<table border="0">
+<tbody>
+</tbody>
+</table>
+<div class="mcscFixUp"><table>
+<tbody>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId25"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:6:deliverMultipleChoiceSingleCorrect:_id863" value="28911100" disabled="disabled" id="a11yAutoGenInputId25">  A. the latent heat of phase transition.</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId26"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:6:deliverMultipleChoiceSingleCorrect:_id863" value="28911099" disabled="disabled" id="a11yAutoGenInputId26">  B. the latent heat of vaporization.</label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId27"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:6:deliverMultipleChoiceSingleCorrect:_id863" value="28911097" disabled="disabled" id="a11yAutoGenInputId27">  C. the latent heat of sublimation. </label></td>
+
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><label for="a11yAutoGenInputId28"><input type="radio" name="takeAssessmentForm:_id58:0:_id120:6:deliverMultipleChoiceSingleCorrect:_id863" value="28911098" disabled="disabled" id="a11yAutoGenInputId28">  D. the latent heat of fusion.</label></td>
+
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><script>$('div.mcscFixUp').each(function(index1,elBlockToFix){$(elBlockToFix).find('div.mcscFixUpSource label').each(function(index,elLabelAndInputToMove){$(elBlockToFix).find('div.mcscFixUpTarget:first').replaceWith($(elLabelAndInputToMove));$(elLabelAndInputToMove).parent('td').next('td').contents().appendTo(elLabelAndInputToMove);$(elLabelAndInputToMove).parent('td').next('td').remove();});$(elBlockToFix).find('div.mcscFixUpSource').remove();});</script><br><br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:6:deliverMultipleChoiceSingleCorrect:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key:  </label><span id="takeAssessmentForm:_id58:0:_id120:6:deliverMultipleChoiceSingleCorrect:answerKeyMC">D</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q8"></a>Question 8 of 9</h5></td>
+<td class="navList"> 0.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3">Rank the following in order of their damping:<table border="0">
+<tbody>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td>A. Undamped</td>
+</tr>
+<tr>
+<td>B. Overdamped</td>
+</tr>
+<tr>
+<td>C. Underdamped</td>
+</tr>
+<tr>
+<td>D. Critically damped</td>
+</tr>
+</tbody>
+</table>
+<hr style="border:none;border-top:solid black 1px"><table>
+<tbody>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:0:ximage" src="crossmark.gif" alt="Correct"><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:0:image2" src="spacer.gif" alt="Incorrect" height="16" width="16"></td>
+<td><select name="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:0:_id667" size="1" disabled="">	<option value="0">select</option>	<option value="28911104">A</option>	<option value="28911102">B</option>	<option value="28911103">C</option>	<option value="28911105">D</option></select></td>
+<td>1. Most damping </td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:1:ximage" src="crossmark.gif" alt="Correct"><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:1:image2" src="spacer.gif" alt="Incorrect" height="16" width="16"></td>
+<td><select name="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:1:_id667" size="1" disabled="">	<option value="0">select</option>	<option value="28911117">A</option>	<option value="28911116">B</option>	<option value="28911115">C</option>	<option value="28911114">D</option></select></td>
+<td>2. Second most damping </td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:2:ximage" src="crossmark.gif" alt="Correct"><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:2:image2" src="spacer.gif" alt="Incorrect" height="16" width="16"></td>
+<td><select name="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:2:_id667" size="1" disabled="">	<option value="0">select</option>	<option value="28911113">A</option>	<option value="28911110">B</option>	<option value="28911112">C</option>	<option value="28911111">D</option></select></td>
+<td>3. Second least damping</td>
+</tr>
+<tr>
+<td><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:3:ximage" src="crossmark.gif" alt="Correct"><img id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:3:image2" src="spacer.gif" alt="Incorrect" height="16" width="16"></td>
+<td><select name="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:_id664:3:_id667" size="1" disabled="">	<option value="0">select</option>	<option value="28911107">A</option>	<option value="28911106">B</option>	<option value="28911108">C</option>	<option value="28911109">D</option></select></td>
+<td>4. Least damping </td>
+</tr>
+</tbody>
+</table>
+<br><table>
+<tbody>
+<tr>
+<td><label for="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:answerKeyMC" class="answerkeyFeedbackCommentLabel">
+Answer Key: </label><span id="takeAssessmentForm:_id58:0:_id120:7:deliverMatching:answerKeyMC">1:B, 2:D, 3:C, 4:A</span></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><table width="100%">
+<tbody>
+<tr>
+<td class="navView"><h5><a name="p1q9"></a>Question 9 of 9</h5></td>
+<td class="navList"> 0.0/ 1.0 Points</td>
+</tr>
+</tbody>
+</table>
+<div class="tier3">What topics in the reading did you find most difficult/challenging? If you didn't find anything challenging, what did you find to be the most interesting? 
+<br>
+(There is no right answer here. We just want to get your opinion. You will get marks for just answering this.)
+<br>
+<table border="0">
+<tbody>
+</tbody>
+</table>
+<a id="takeAssessmentForm:_id58:0:_id120:8:deliverShortAnswer:hiddenlink" href="https://scholar.vt.edu/portal/tool/d705c19d-ec7b-40d6-a41c-3df92ed0db81/jsf/select/selectIndex#" onclick="clearFormHiddenParams_takeAssessmentForm(&#39;takeAssessmentForm&#39;);document.forms[&#39;takeAssessmentForm&#39;][&#39;takeAssessmentForm:_idcl&#39;].value=&#39;takeAssessmentForm:_id58:0:_id120:8:deliverShortAnswer:hiddenlink&#39;;document.forms[&#39;takeAssessmentForm&#39;][&#39;itemId&#39;].value=&#39;5225045&#39;; document.forms[&#39;takeAssessmentForm&#39;].submit(); return false;"></a><br><br></div></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+  <br>
+
+<!-- 1. special case: linear + no question to answer -->
+
+  
+  
+  
+
+  
+  
+  
+
+
+<!-- 2. normal flow -->
+
+  
+  
+	
+  
+
+  
+  
+    
+
+    
+
+  
+
+
+  
+           
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+   
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+<table border="0">
+<tbody>
+<tr>
+<td><table border="0">
+<tbody>
+</tbody>
+</table>
+</td>
+<td><table border="0">
+<tbody>
+</tbody>
+</table>
+</td>
+<td><table border="0">
+<tbody>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><table border="0">
+<tbody>
+</tbody>
+</table>
+</td>
+<td><table border="0">
+<tbody>
+</tbody>
+</table>
+</td>
+<td><table border="0" width="100%">
+<tbody>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+	
+	<a id="takeAssessmentForm:hiddenReloadLink" href="https://scholar.vt.edu/portal/tool/d705c19d-ec7b-40d6-a41c-3df92ed0db81/jsf/select/selectIndex#" onclick="clearFormHiddenParams_takeAssessmentForm(&#39;takeAssessmentForm&#39;);document.forms[&#39;takeAssessmentForm&#39;][&#39;takeAssessmentForm:_idcl&#39;].value=&#39;takeAssessmentForm:hiddenReloadLink&#39;; document.forms[&#39;takeAssessmentForm&#39;].submit(); return false;"></a>
+
+<p></p>
+
+<!-- DONE BUTTON IN PREVIEW -->
+
+ 
+     
+     
+ 
+
+<input type="hidden" name="com.sun.faces.VIEW" id="com.sun.faces.VIEW" value="_id49705:_id49709"><input type="hidden" name="takeAssessmentForm" value="takeAssessmentForm"><input type="hidden" name="itemId"><input type="hidden" name="takeAssessmentForm:_idcl">
+<script type="text/javascript">
+<!--
+function clearFormHiddenParams_takeAssessmentForm(curFormName) {
+  var curForm = document.forms[curFormName];
+ curForm.elements['itemId'].value = null;
+ curForm.elements['takeAssessmentForm:_idcl'].value = null;
+}
+//-->
+</script>
+</form>
+<!-- end content -->
+</div>
+<script type="text/JavaScript">fixImplicitLabeling();</script>
+    
+  
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all " tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-timer-warning" style="display: none; position: absolute; overflow: hidden; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on"><span class="ui-dialog-title" id="ui-dialog-title-timer-warning" unselectable="on">&nbsp;<span class="skip" unselectable="on"> 
+      	WARNING: 
+      	You have 5 minutes left. 
+      	NOTE: The timer will continue to count down even if you do not close this window.</span></span><a href="https://scholar.vt.edu/portal/tool/d705c19d-ec7b-40d6-a41c-3df92ed0db81/jsf/select/selectIndex#" class="ui-dialog-titlebar-close ui-corner-all" role="button" unselectable="on"><span class="ui-icon ui-icon-closethick" unselectable="on">close</span></a></div><div id="timer-warning" style="" class="ui-dialog-content ui-widget-content">
+      	<h3>You have 5 minutes left.</h3>
+      	<p>NOTE: The timer will continue to count down even if you do not close this window.</p>
+      </div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all " tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-timer-expired-warning" style="display: none; position: absolute; overflow: hidden; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on"><span class="ui-dialog-title" id="ui-dialog-title-timer-expired-warning" unselectable="on">&nbsp;</span><a href="https://scholar.vt.edu/portal/tool/d705c19d-ec7b-40d6-a41c-3df92ed0db81/jsf/select/selectIndex#" class="ui-dialog-titlebar-close ui-corner-all" role="button" unselectable="on"><span class="ui-icon ui-icon-closethick" unselectable="on">close</span></a></div><div id="timer-expired-warning" style="" class="ui-dialog-content ui-widget-content">
+			<h3>Time Expired!</h3>
+      		<p>All of your answers are being submitted</p>
+      		<div id="squaresWaveG">
+				<div id="squaresWaveG_1" class="squaresWaveG">
+				</div>
+				<div id="squaresWaveG_2" class="squaresWaveG">
+				</div>
+				<div id="squaresWaveG_3" class="squaresWaveG">
+				</div>
+				<div id="squaresWaveG_4" class="squaresWaveG">
+				</div>
+				<div id="squaresWaveG_5" class="squaresWaveG">
+				</div>
+				<div id="squaresWaveG_6" class="squaresWaveG">
+				</div>
+				<div id="squaresWaveG_7" class="squaresWaveG">
+				</div>
+				<div id="squaresWaveG_8" class="squaresWaveG">
+				</div>
+			</div>
+			
+		</div></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

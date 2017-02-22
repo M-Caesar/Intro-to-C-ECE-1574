@@ -1,0 +1,21 @@
+Garcia,Liam,1000,F,1:50:37,1:46:37
+Grubar,Charlotte,1001,M,1:10:03,1:06:03
+Jensen,Noa,1002,F,1:25:23,1:21:23
+Martin,Sofia,1003,M,1:43:32,1:39:32
+Diaz,John Paul,1004,F,1:31:21,1:27:21
+Lee,Mohammed,1005,F,1:18:20,1:14:20
+Moran,Sofia,1006,M,1:21:48,1:17:48
+Peeters,Uendi,1007,M,1:38:42,1:34:42
+Bun,Seo-yeon,1008,F,1:13:33,1:09:33
+Grubar,Emma,1009,F,1:42:14,1:38:14
+Brown,John Paul,1010,F,1:29:29,1:25:29
+Garcia,Lukas,1011,F,1:35:21,1:31:21
+Fernandez,Maryam,1012,M,1:48:47,1:44:47
+Moran,Anna,1013,F,1:25:05,1:21:05
+Hernandez,Yong,1014,F,1:23:32,1:19:32
+Martin,Noa,1015,F,1:36:19,1:32:19
+Hernandez,Noa,1016,M,1:40:02,1:36:02
+Martin,Seo-yeon,1017,F,1:52:48,1:48:48
+Wang,Sofia,1018,M,1:57:43,1:53:43
+Diaz,Alysha,1019,M,1:24:28,1:20:28
+Zhao,Bowei,1010,M,1:05:09,1:06:08

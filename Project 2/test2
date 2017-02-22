@@ -1,0 +1,47 @@
+void myAwesomeFunction( istream&, ostream& out)
+{
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+int main()
+
+{
+
+	char c;
+
+	c = in.peek(); //look at the next character
+
+	while( !in.fail())
+	{
+		if (isalpha(c) && c == 'p' || c == 'P')// will look at c, will return true if it is an alphabetic letter.
+												// Then check if lower or uppercase p. Character is a letter so single quote
+												// string is always double quote as as many characters
+		{
+			// go call some function when this happens. 
+			// passing in the information. 
+
+			//below won't work
+
+			in.get();
+
+
+		}
+		else
+		{
+			// go call soething else
+
+			in.get();
+		}
+
+		while ( isspace(in.peek())) // eat white space 
+			in.get();
+
+
+
+
+		c = in.peek();
+	}
+}
+}

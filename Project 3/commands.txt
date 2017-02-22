@@ -1,0 +1,6 @@
+filename: inventory.txt
+buy
+Part #: Part-1 10
+buy
+Part #: Part-2 100
+save inventory2.txt

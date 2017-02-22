@@ -1,0 +1,79 @@
+Use isspace
+ex
+int isspace (int c );
+
+
+Write a function that computes serial and returns an answer. Write a function that computes parallel and returns an answer. 
+
+
+
+
+in could be like:
+
+10 20 30 P 40 50 S 10 30 P 34 50
+or
+P 10 10
+S 45 60
+
+If no letter in front, it should be assumed that it is series until the next letter. Don't try to store or set artificial limits on number of ties it can run.
+
+Use peek. As if you write a function that checks for a letter, it will fail if a number appears and vice versa. 
+
+Recommend we use:
+
+initalize stuff. 
+double results = 0;
+
+
+Peek at the in and put the results in a char. 
+// 
+while the in hasn't failed
+	if the chaacter we peeked is a letter and the character is 's' or 'S'.
+	or if the character is a digit. 
+		go call the series function and store the answer in a running total. 
+
+		while ( isspace( in.peek() ) ) 
+			in.get();
+
+		results = results + series( in );
+
+	else if the character we peeked at is a letter and the character is 'p' or 'P'.
+		go call the parallel function and store the anser in a running total. 
+
+		while ( isspace( in.peek() ) ) 
+			in.get();
+
+		results = results + parallel( in );
+
+		^ will peek at the in and put the results in a character. The get function will move you one character down to see if it is a character or letter. 
+
+series function
+	Peek at the in and put the results in a char. 
+	while the in hasn't failed and the next in is not a letter
+		read the next integer. 
+		do the series calculation
+
+		while ( isspace( in.peek() ) ) 
+			in.get();
+
+			peek at the in and put the results in a cahracter again
+
+			return the answer I smmed up
+
+Parallel function
+	Peek at the in and put the results in a char. 
+	while the in hasn't failed and the next in is not a letter
+		read the next integer. 
+		do the parallel calculation
+
+		while ( isspace( in.peek() ) ) 
+			in.get();
+
+			peek at the in and put the results in a cahracter again
+
+			return the answer I smmed up
+
+
+
+
+

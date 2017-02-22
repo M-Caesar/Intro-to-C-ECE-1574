@@ -1,0 +1,9 @@
+filename: input1.txt
+find-name Lee
+find-place 9
+find-bib 1004
+find-name Mercury
+find-place -9
+find-bib 1234567
+find-bib 1009
+find-name Zhao

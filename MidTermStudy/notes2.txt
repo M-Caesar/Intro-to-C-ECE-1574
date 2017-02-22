@@ -1,0 +1,52 @@
+notes
+
+The lifetime of a global variable, it will last until its 'scope' is finished. 
+
+-Ask about static int
+
+
+-----
+
+Input and Output
+
+istream
+	is the 'parent' of all input streams. 
+	Ex:
+	cin
+	file
+	input stream stream
+
+ostream
+	is the 'parent' of all output streams
+	Ex:
+	cout
+
+
+stream
+	c++ views data as streaming past, or through your program. 
+
+we process our streams sequentially. 
+
+We can 'read' data from our stream using extraction >> 
+extraction will read as much data from the stream as it can until. 
+	One of three things
+	:it runs out of information
+	: it encouters a piece of data that it doesn't know how to read or doesn't match operator. (putting a word into 'int')
+	: encounters white space character. \t , space, or new line \n.
+
+Extraction skips whitespace for you. 
+If you were reading this file word by word. IT would see a space and then stop, 
+
+
+input files
+
+ifstream - the input stream for reading Input files. 
+
+#include <fstream>
+using std::ifstream;
+
+To open a file, we need to 
+
+1. declare our variable
+2. open the file. 
+

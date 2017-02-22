@@ -1,0 +1,10 @@
+Know what Throw is
+
+
+Know what Try is
+
+Know what exception is
+	just an error
+
+
+typedef makes code more general 

@@ -1,0 +1,108 @@
+On Line 10, what is the value for x on the right side of the qual sign
+
+answer is 0
+
+
+
+
+
+On line 30, what is the value for x on the right side of the equals sign
+
+answer is 7
+
+
+On line 40, what is the value for x on the right side of the equals sign
+
+answer is 14
+
+------------
+How?
+------------
+
+On line 60, because it doesn't find an int x yet, it goes outside of the scope of main and reassigns x to 0. But then it finds x = 7 on line 70 and so the local x is now 7. 
+
+Since x is 7, when it calls function(x), it then multiplies it by 2 to get 14. But then it calls oTherFunction() which does not pass in an x. So OtherFunction() goes out of scope and finds that x=0 on the global factor and so 0 times 4 is 0. 
+
+
+
+------------------------General Information---------
+
+Pointer to each variable is used through 'this->'
+
+
+Chapter 18
+1. How is a pointer like an array? How is a pointer different than an array?
+	Pointer is a memory address. It's like an array in that it keeps an idea of is position
+	Pointer can point to an array. But you can dynamically allocat it
+
+7. Where do pointers typically get their memory?
+	They get it from the free-store. The heap, or dynamically allocated place
+
+3. What are two limitations of arrays?
+	fixed size and one type of thingy
+
+4. What causes an input stream to fail?
+	If it tries to read data of a different type than what it tries to read. Fails if it runs out of input. 
+
+Chapter 11
+1. How do you control the number of digits displayed on a double?
+	setprecision
+2. How do you control how many characters are displayed on the next output?
+	setw
+
+
+5. How do you typically give a pointer it’s address?
+	You use the word 'new'
+
+What is a pointer
+	variable that holds an address
+
+How is a struct different than a class
+	a struct is public by default, a class is private by default
+
+7. Why are constants ok to be declared in the global scope but not variables?
+	constants can be global because they can't change. Global constants are nice because they can't be changed. Variables can lead to confusing code. Global bypasses security and that it is then bad. 
+
+How do you read a file in
+	ifstream.open
+	ofstream
+
+Three main iterations
+	while, do while, something else
+
+Pass by Reference Questions:
+	Does the function need to modify the parameter
+	Does the calling function need to know it was changed. 
+
+	if yes, then pass by reference
+
+accessors:
+	getters
+setters:
+	way to change the private data
+
+
+Know what exception is
+	just an error
+	
+Abstraction
+	idea of moving details out of the picture
+
+
+Pre-test loop/post-test loop 
+	pre test loop does it before (for and while))
+
+		may never execute ever if false
+	post test loop (do while)
+		guaranteed to run at least once
+
+
+How do you find a run time error
+	the compiler finds it
+
+linker errors come next
+
+compiler errors
+	you test the code
+
+public and private are access modifiers

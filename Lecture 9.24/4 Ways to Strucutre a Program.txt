@@ -1,0 +1,80 @@
+4 Ways to Strucutre a Program
+
+1: Sequence
+2: Selection
+3: Repitition/Looping
+4: Functions
+
+While loop (swiss army loop)
+
+-input failure control loop (while (!in.fail() );
+-counting loops 
+-summing loops
+
+--for loop (similar to while loop, but beter for numbers)
+Example:
+for ( int i=0; i<10; i++ ); // i++ means it will get larger and larger until it reaches a limit, which in this case is 10
+
+--while loop of the same thing
+Example:
+
+int i=0; // initialization
+while ( i<10 ) //test
+{
+	//loop body
+	i++; // modification
+}
+
+--do while loop - post test loop
+
+int x;
+do
+{
+	cin >> x;
+}
+while ( x % 2 != 0 ); 
+// only control structure with a supressed ; on the end of it. // means if the remainder of x divisible by 2 will be even or odd. If it is even, it will have a remainder of 0 and so the code will end. Otherwise, if it is odd, a remainder will be remaining and will be non zero, and thus the code continues. 
+
+--
+major difference between a pre test loop and a post test loop is:
+
+pre test loop may never run, a post test loop is guaranteed to run at least one time. 
+
+--
+
+Functions:
+
+A named block of code.  
+Example main, exp etc. 
+
+
+3 pieces:
+1. Header or signature:
+	3 pieces to signature
+	a. return type -
+	b. name
+	c. parameter list
+
+
+2. Definitio
+	a. This is where we write our function
+3. Call the function
+	
+
+//this function will tell me
+// if a number is odd or even
+// a return of true means the number was even. Therefore a
+
+bool oddOrEven (int number); //
+\\
+//notice it ends with a ll
+
+
+//function definition
+bool oddOrEvent ( int number ())
+{
+	bool answer = false;
+	if ( number % 2 == 0)
+		answer = true;
+	return 0;
+}

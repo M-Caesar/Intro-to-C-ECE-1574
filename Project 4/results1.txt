@@ -1,0 +1,12 @@
+find-name Lee
+3	Lee, Mohammed	1005	F	1:18:201	1:14:201
+find-place 9
+9	Brown, John Paul	1010	F	1:29:291	1:25:291
+find-bib 1004
+10	Diaz, John Paul	1004	F	1:31:211	1:27:211
+find-name Mercury
+Sorry, no runners with last name Mercury were found.
+find-place -9
+Sorry, no runners with place -9 were found.
+find-bib 1234567
+Sorry, no runners with bib 1234567 were found.

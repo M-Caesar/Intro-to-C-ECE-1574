@@ -1,0 +1,8 @@
+Store time as an integer
+Take hours and make it into s.
+
+Use get-line instead of string. get-line(in, lastname, ',')
+so it stops at the comma. 
+getline(in, name, ',');
+
+Don't understand chip and clock and how 'sort' works

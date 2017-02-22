@@ -1,0 +1,23 @@
+Data Type - int, float, char, ifstream etc
+	Take it into a variable.
+
+
+Variable is a named object in memory. 
+
+Variable Declarition -int x
+Initalization is the first value
+assignment is the second value you ive it apart from first .
+Extraction takes the value into it. 
+
+
+Won't put absraction or encapsulation
+	abstraction is ignoring details for an amount of time
+	encapsulation is putting stuff together inside a function
+
+
+Need to know what are the 4 ways to structure a program
+Need to know 4 stages of process in developing a program
+
+Know pass by reference and pass by copy
+
+If a function will modify a variable. Then you use pass by reference. & symbol.
